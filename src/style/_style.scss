@@ -1,8 +1,7 @@
 body {
-  font-family: 'Montserrat';
+  font-family: Montserrat;
   background-color: $back;
   color: $text;
-
 }
 
 .image {
@@ -10,4 +9,9 @@ body {
   height: 500px;
   background-size: cover;
   background-image: url('img/brock-wegner.jpg');
+}
+
+p {
+  padding: auto;
+  position: relative;
 }
