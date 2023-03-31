@@ -50,6 +50,7 @@
     "webpack-dev-server": "^4.13.1"
   },
   "dependencies": {
-    "@babel/polyfill": "^7.12.1"
+    "@babel/polyfill": "^7.12.1",
+    "the-new-css-reset": "^1.8.4"
   }
 }
