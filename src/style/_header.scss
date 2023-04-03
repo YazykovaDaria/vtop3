@@ -1,122 +1,21 @@
 .header {
-  padding: 40px;
-
   @include bg-gradient();
 
   color: $color-contrast;
-
-  @media (max-width: 820px) {
-    padding: 30px;
-  }
-}
-
-.nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.nav__list {
-  display: flex;
-  gap: 35px;
-
-  // @media (max-width: 820px) {
-  //   gap: 20px;
-  // }
-
-
-}
-
-
-.nav__list-bg {
-    @media (max-width: 760px) {
-      display: none;
-      // visibility: hidden;
-      // top: 0;
-      // right: -100%;
-  }
-}
-
-.nav__item {
-
-  // @media (max-width: 760px) {
-  //   display: none;
-  // }
-}
-
-.nav__link {
-  font-family: 'Arial';
-font-size: 15px;
-line-height: 160%;
-color: $color-font-header;
-
-&:hover {
-  color: $color-font-side;
-
-  @include transition(0.3s)
-}
-}
-
-.nav__link--active {
-  position: relative;
-  color: $color-contrast;
-
-  &::after {
-    content: " ";
-    background: $color-font-side;
-    width: 100%;
-    height: 3px;
-    position: absolute;
-    bottom: -5px;
-    left: 0px;
-  }
-
-  &:hover {
-    color: $color-contrast;
-    cursor: default;
-  }
-}
-
-.burger {
-  position: relative;
-  width: 30px;
-  height: 30px;
-  display: none;
-
-  @media (max-width: 760px) {
-    display: block;
-  }
-}
-
-.burger__line {
-  display: block;
-  position: absolute;
-  top: 50%;
-  width: 100%;
-  height: 2px;
-  background-color: $color-font-side;
-
-  &::before {
-    @extend .burger__line;
-    content: '';
-    top: -10px;
-  }
-
-  &::after {
-    @extend .burger__line;
-    content: '';
-    top: 10px;
-  }
 }
 
 .header-content {
   display: flex;
+  justify-content: space-between;
+  padding-left: 40px;
+  padding-top: 90px;
 }
 
 .header-content__content {
   @include flex-col();
   gap: 42px;
   max-width: 460px;
+  margin: 163px 0 243px 0;
 }
 
 .header-content__title {
@@ -130,4 +29,45 @@ color: $color-font-header;
 }
 
 .header-content__img {
+  width: 60%;
+  background-image: url('../assets/images/start-screen-puppy.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@media (max-width: 1000px) {
+  .header-content {
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+    gap: 100px;
+    padding: 60px 10px 0 10px;
+  }
+
+  .header-content__content {
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .header-content__img {
+    width: 569px;
+    height: 593px;
+  }
+}
+
+@media (max-width: 640px) {
+  .header-content__title {
+    font-size: 25px;
+    text-align: center;
+  }
+
+  .header-content__img {
+    width: 260px;
+    height: 271px;
+  }
+
+  .header-content__text {
+    text-align: center;
+  }
 }
