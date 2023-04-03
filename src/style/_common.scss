@@ -43,3 +43,29 @@
   line-height: 15px;
   letter-spacing: 0.1em;
 }
+
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 207px;
+  height: 52px;
+  background-color: $bnt-bg-main;
+  border-radius: 100px;
+  text-align: center;
+  font-size: 17px;
+  color: $color-font-btn;
+
+  &:hover {
+    cursor: pointer;
+    background-color: $bnt-bg-hover;
+    @include transition(0.3s)
+  }
+}
+
+.text {
+  font-family: 'Arial', sans-serif;
+  font-size: 15px;
+  line-height: 160%;
+  color: $color-font-text;
+}
