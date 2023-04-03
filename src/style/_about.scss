@@ -17,6 +17,7 @@
 
 .about__content {
   @include flex-col();
+
   gap: 25px;
   max-width: 380px;
 }
@@ -27,7 +28,6 @@
     align-items: center;
     gap: 80px;
   }
-
 }
 
 @media (max-width: 640px) {

@@ -1,0 +1,13 @@
+.friends {
+  @include flex-col();
+
+  gap: 60px;
+  align-items: center;
+  padding: 80px 40px 100px;
+  background-color: $color-side;
+}
+
+.friends__btn {
+  width: 261px;
+  height: 52px;
+}

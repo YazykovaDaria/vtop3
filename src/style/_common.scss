@@ -3,10 +3,10 @@ html {
 }
 
 .container {
-
   max-width: 1280px;
 
   @include flex-col();
+
   justify-content: space-between;
   margin: 0 auto;
 }
@@ -26,33 +26,6 @@ html {
   }
 }
 
-.logo {
-  @include flex-col();
-
-  gap: 10px;
-  align-items: center;
-  color: $color-side;
-}
-
-.logo__item {
-  color: $color-font-header;
-}
-
-.logo__link {
-  color: $color-font-side;
-  font-size: 32px;
-  font-family: Georgia, serif;
-  line-height: 110%;
-  letter-spacing: 0.06em;
-}
-
-.logo__text {
-  font-size: 13px;
-  font-family: Arial, sans-serif;
-  line-height: 15px;
-  letter-spacing: 0.1em;
-}
-
 .btn {
   display: flex;
   justify-content: center;
@@ -68,12 +41,40 @@ html {
   &:hover {
     cursor: pointer;
     background-color: $bnt-bg-hover;
-    @include transition(0.3s)
+
+    @include transition(0.3s);
+  }
+}
+
+.btn-round {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 52px;
+  height: 52px;
+  background-color: transparent;
+  border: 2px solid $bnt-bg-main;
+  border-radius: 100px;
+
+  &:hover {
+    cursor: pointer;
+    background-color: $bnt-bg-hover;
+
+    @include transition(0.3s);
+  }
+}
+
+.btn--disabled {
+  border: 2px solid $color-font-header;
+
+  &:hover {
+    background-color: transparent;
+    cursor: default;
   }
 }
 
 .text {
-  font-family: 'Arial', sans-serif;
+  font-family: Arial, sans-serif;
   font-size: 15px;
   line-height: 160%;
   color: $color-font-text;
