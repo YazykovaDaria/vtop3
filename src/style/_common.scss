@@ -83,3 +83,15 @@ html {
     text-align: center;
   }
 }
+
+.subtitle {
+  font-family: 'Georgia', serif;
+font-size: 20px;
+line-height: 115%;
+letter-spacing: 0.06em;
+color: $font-card;
+
+@media (max-width: 640px) {
+  text-align: center;
+}
+}
