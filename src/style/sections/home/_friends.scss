@@ -1,0 +1,40 @@
+.friends {
+  @include flex-col();
+
+  gap: 60px;
+  align-items: center;
+  padding: 80px 40px 100px;
+  background-color: $color-side;
+}
+
+.friends__btn {
+  width: 261px;
+  height: 52px;
+}
+
+.friends__cards {
+display: flex;
+justify-content: center;
+gap: 90px;
+}
+
+@media (max-width: 1200px) {
+.friends__cards {
+  gap: 40px;
+}
+
+// .friends__card {
+//   &:last-child {
+//     display: none;
+//   }
+// }
+}
+
+// @media (max-width: 740px) {
+
+//   .friends__card {
+//     &:first-child {
+//       display: none;
+//     }
+//   }
+// }

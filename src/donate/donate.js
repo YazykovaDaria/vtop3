@@ -1,4 +1,4 @@
 import './donate.html';
-import './donate.scss';
+import '../style/index.scss';
 
 console.log('donate');

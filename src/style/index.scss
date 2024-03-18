@@ -1,0 +1,22 @@
+// @import '../style/fonts';
+// @import '../style/var';
+// @import '../style/mixins';
+// @import '../style/common';
+// @import '../style/header';
+// @import '../style/nav';
+// @import '../style/about';
+// @import '../style/friends';
+// @import '../style/card';
+// @import '../style/carousel';
+// @import '../style/slider';
+// @import '../style/card-popup';
+
+@import './_fonts';
+@import './vars';
+@import './mixins';
+//deprecated later
+@import './mixins-old';
+//
+@import './common';
+@import './components';
+@import './sections';
