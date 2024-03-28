@@ -1,6 +1,9 @@
+/* eslint-disable import/no-extraneous-dependencies */
 /* eslint-disable no-param-reassign */
 /* eslint-disable global-require */
 const path = require('path');
+const globule = require('globule');
+const fs = require('fs');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
@@ -10,13 +13,23 @@ const devMode = mode === 'development';
 const target = devMode ? 'web' : 'browserslist';
 const devtool = devMode ? 'source-map' : undefined;
 
-const pages = ['index', 'donate'];
+const mixins = globule
+  .find(['src/pug/mixins/**/_*.pug', '!src/pug/mixins/mixins.pug'])
+  .map((mixinPath) => mixinPath.split('/').pop())
+  .reduce((acc, currentItem) => `${acc}include ${currentItem}\n`, ``);
+
+fs.writeFile('src/pug/mixins/mixins.pug', mixins, (err) => {
+  if (err) throw err;
+});
+
+const pages = globule.find(['src/pug/pages/**/*.pug']);
 
 module.exports = {
   mode,
   target,
   devtool,
   devServer: {
+    watchFiles: path.join(__dirname, 'src'),
     static: {
       directory: path.join(__dirname, 'dist'),
     },
@@ -25,14 +38,11 @@ module.exports = {
     hot: true,
   },
 
-  entry: pages.reduce((config, page) => {
-    config[page] = path.resolve('@babel/polyfill', __dirname, 'src', page, `${page}.js`);
-    return config;
-  }, {}),
+  entry: path.resolve('@babel/polyfill', __dirname, 'src', 'js', `index.js`),
 
   output: {
-    path: path.resolve(__dirname, 'dist'),
     clean: true,
+    path: path.resolve(__dirname, 'dist'),
     filename: '[name].[contenthash].js',
     assetModuleFilename: 'assets/[name][ext]',
   },
@@ -51,16 +61,13 @@ module.exports = {
     }),
   ].concat(
     pages.map(
-      (page) =>
+      (pugPath) =>
         new HtmlWebpackPlugin({
-          inject: true,
-          template: path.resolve(__dirname, 'src', page, `${page}.html`),
-          filename: `${page}.html`,
-          chunks: [page],
+          template: pugPath,
+          filename: `${pugPath.split(/\/|.pug/).splice(-2, 1)}.html`,
         })
     )
   ),
-
   module: {
     rules: [
       {
@@ -116,6 +123,11 @@ module.exports = {
         generator: {
           filename: 'fonts/[name][ext]',
         },
+      },
+      {
+        test: /\.pug$/,
+        loader: 'pug-loader',
+        exclude: /(node_modules|bower_components)/,
       },
       {
         test: /\.m?js$/i,

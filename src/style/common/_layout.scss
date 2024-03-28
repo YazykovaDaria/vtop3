@@ -1,0 +1,29 @@
+html {
+  scroll-behavior: smooth;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+html,
+body{
+  height: 100%;
+}
+
+.wrapper {
+  @include flex-col();
+  min-height: 100%;
+}
+
+.header{
+  background-color: rebeccapurple;
+  position: sticky;
+  top: 0;
+}
+
+.main{
+  background-color: green;
+  flex-grow: 1;
+}
+
+.footer{
+  background-color: blue;
+}

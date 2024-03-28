@@ -1,13 +1,6 @@
-html {
-  scroll-behavior: smooth;
-}
-
 .container {
-  max-width: 1280px;
-
-  @include flex-col();
-
-  justify-content: space-between;
+  max-width: $max-width;
+  width: 100%;
   margin: 0 auto;
 }
 

@@ -1,6 +1,6 @@
-import './index.html';
-import 'the-new-css-reset/css/reset.css';
-import '../style/index.scss';
+// import './index.html';
+// import 'the-new-css-reset/css/reset.css';
+// import '../style/index.scss';
 // import pets from '../data/pets';
 // import createComponent from '../js/slider';
 
