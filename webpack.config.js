@@ -1,12 +1,12 @@
+/* eslint-disable import/no-unresolved */
 /* eslint-disable import/no-extraneous-dependencies */
 /* eslint-disable no-param-reassign */
 /* eslint-disable global-require */
 const path = require('path');
 const globule = require('globule');
 const fs = require('fs');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
+// const CopyWebpackPlugin = require('copy-webpack-plugin');
+const HtmlBundlerPlugin = require('html-bundler-webpack-plugin');
 
 const mode = process.env.NODE_ENV || 'development';
 const devMode = mode === 'development';
@@ -22,123 +22,192 @@ fs.writeFile('src/pug/mixins/mixins.pug', mixins, (err) => {
   if (err) throw err;
 });
 
-const pages = globule.find(['src/pug/pages/**/*.pug']);
+const pathToPages = path.join(__dirname, 'src/pug/pages');
+
+const pages = globule.find(path.join(pathToPages, '/**/*.pug')).reduce((entry, file) => {
+  const name = path.relative(pathToPages, file).replace(/\.pug$/, '');
+  entry[name] = file;
+  return entry;
+}, {});
 
 module.exports = {
   mode,
   target,
   devtool,
   devServer: {
-    watchFiles: path.join(__dirname, 'src'),
-    static: {
-      directory: path.join(__dirname, 'dist'),
+    static: path.resolve(__dirname, 'dist'),
+    watchFiles: {
+      paths: ['src/**/*.*'],
+      options: {
+        usePolling: true,
+      },
     },
     port: 3000,
     open: true,
     hot: true,
   },
 
-  entry: path.resolve('@babel/polyfill', __dirname, 'src', 'js', `index.js`),
+  resolve: {
+    alias: {
+      '@images': path.join(__dirname, 'src/assets/images'),
+      '@fonts': path.join(__dirname, 'src/assets/fonts'),
+      '@styles': path.join(__dirname, 'src/style'),
+      '@scripts': path.join(__dirname, 'src/js'),
+    },
+  },
 
   output: {
-    clean: true,
     path: path.resolve(__dirname, 'dist'),
-    filename: '[name].[contenthash].js',
-    assetModuleFilename: 'assets/[name][ext]',
+    clean: true,
   },
 
   plugins: [
-    new MiniCssExtractPlugin({
-      filename: '[name].[contenthash].css',
+    new HtmlBundlerPlugin({
+      entry: pages,
+      js: {
+        filename: 'js/[name].[contenthash:8].js',
+      },
+      css: {
+        filename: 'style/[name].[contenthash:8].css',
+      },
+      preprocessor: 'pug',
     }),
-    new CopyWebpackPlugin({
-      patterns: [
-        {
-          from: path.resolve(__dirname, 'src', 'assets', 'images'),
-          to: path.resolve(__dirname, 'dist', 'assets', 'images'),
-        },
-      ],
-    }),
-  ].concat(
-    pages.map(
-      (pugPath) =>
-        new HtmlWebpackPlugin({
-          template: pugPath,
-          filename: `${pugPath.split(/\/|.pug/).splice(-2, 1)}.html`,
-        })
-    )
-  ),
+  ],
+
   module: {
     rules: [
       {
-        test: /\.html$/i,
-        loader: 'html-loader',
+        test: /\.(scss)$/,
+        use: ['css-loader', 'sass-loader'],
       },
       {
-        test: /\.(c|sa|sc)ss$/i,
-        use: [
-          devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
-          'css-loader',
-          {
-            loader: 'postcss-loader',
-            options: {
-              postcssOptions: {
-                plugins: [require('postcss-preset-env')],
-              },
-            },
-          },
-          'sass-loader',
-        ],
-      },
-      {
-        test: /\.(jpe?g|png|webp|gif|svg)$/i,
-        use: [
-          {
-            loader: 'image-webpack-loader',
-            options: {
-              mozjpeg: {
-                progressive: true,
-              },
-              optipng: {
-                enabled: false,
-              },
-              pngquant: {
-                quality: [0.65, 0.9],
-                speed: 4,
-              },
-              gifsicle: {
-                interlaced: false,
-              },
-              webp: {
-                quality: 75,
-              },
-            },
-          },
-        ],
-        type: 'asset/resource',
-      },
-      {
-        test: /\.woff2?$/i,
+        test: /\.(jpe?g|png|webp|gif|svg|ico)/,
         type: 'asset/resource',
         generator: {
-          filename: 'fonts/[name][ext]',
+          filename: 'img/[name].[hash:8][ext]',
         },
       },
       {
-        test: /\.pug$/,
-        loader: 'pug-loader',
-        exclude: /(node_modules|bower_components)/,
-      },
-      {
-        test: /\.m?js$/i,
-        exclude: /(node_modules|bower_components)/,
-        use: {
-          loader: 'babel-loader',
-          options: {
-            presets: ['@babel/preset-env'],
-          },
+        test: /[\\/]fonts[\\/].+(woff2?|ttf|otf|eot)$/,
+        type: 'asset/resource',
+        generator: {
+          filename: 'assets/fonts/[name][ext]',
         },
       },
     ],
   },
+  // plugins: [
+  // new PugPlugin({
+  //   entry: {
+  //     // define many page templates here
+  //     index: 'src/pages/index.pug', // => dist/index.html
+  //   },
+  //   js: {
+  //     // JS output filename
+  //     filename: 'js/[name].[contenthash:8].js',
+  //   },
+  //   css: {
+  //     // CSS output filename
+  //     filename: 'css/[name].[contenthash:8].css',
+  //   },
+  // }),
+  // new MiniCssExtractPlugin({
+  //   filename: '[name].[contenthash].css',
+  // }),
+  // new CopyWebpackPlugin({
+  //   patterns: [
+  //     {
+  //       from: path.resolve(__dirname, 'src', 'assets', 'images'),
+  //       to: path.resolve(__dirname, 'dist', 'assets', 'images'),
+  //     },
+  //   ],
+  // }),
+  // ],
+
+  // .concat(
+  //   pages.map(
+  //     (pugPath) =>
+  //       new HtmlWebpackPlugin({
+  //         template: pugPath,
+  //         filename: `${pugPath.split(/\/|.pug/).splice(-2, 1)}.html`,
+  //       })
+  //   )
+  // ),
+  // module: {
+  //   rules: [
+  //     {
+  //       test: /\.pug$/,
+  //       loader: PugPlugin.loader, // the Pug loader
+  //     },
+  //     {
+  //       test: /\.html$/i,
+  //       loader: 'html-loader',
+  //     },
+  //     {
+  //       test: /\.(c|sa|sc)ss$/i,
+  //       use: [
+  //         devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
+  //         'css-loader',
+  //         {
+  //           loader: 'postcss-loader',
+  //           options: {
+  //             postcssOptions: {
+  //               plugins: [require('postcss-preset-env')],
+  //             },
+  //           },
+  //         },
+  //         'sass-loader',
+  //       ],
+  //     },
+  //     {
+  //       test: /\.(jpe?g|png|webp|gif|svg|ico)$/i,
+  //       use: [
+  //         {
+  //           loader: 'image-webpack-loader',
+  //           options: {
+  //             mozjpeg: {
+  //               progressive: true,
+  //             },
+  //             optipng: {
+  //               enabled: false,
+  //             },
+  //             pngquant: {
+  //               quality: [0.65, 0.9],
+  //               speed: 4,
+  //             },
+  //             gifsicle: {
+  //               interlaced: false,
+  //             },
+  //             webp: {
+  //               quality: 75,
+  //             },
+  //           },
+  //         },
+  //       ],
+  //       type: 'asset/resource',
+  //     },
+  //     {
+  //       test: /\.woff2?$/i,
+  //       type: 'asset/resource',
+  //       generator: {
+  //         filename: 'fonts/[name][ext]',
+  //       },
+  //     },
+  //     {
+  //       test: /\.pug$/,
+  //       loader: 'pug-loader',
+  //       exclude: /(node_modules|bower_components)/,
+  //     },
+  //     {
+  //       test: /\.m?js$/i,
+  //       exclude: /(node_modules|bower_components)/,
+  //       use: {
+  //         loader: 'babel-loader',
+  //         options: {
+  //           presets: ['@babel/preset-env'],
+  //         },
+  //       },
+  //     },
+  //   ],
+  // },
 };
