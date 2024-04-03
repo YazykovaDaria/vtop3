@@ -1,15 +1,15 @@
-import createElement from '../utils/createElement';
-import createImage from '../utils/createImg';
-import popup from './popup';
+// import createElement from '../utils/createElement';
+// import createImage from '../utils/createImg';
+// import popup from './popup';
 
-const classNames = {
-  card: 'card friends__card',
-  title: 'title card__title',
-  btn: 'btn card__btn',
-  img: 'card__img',
-};
+// const classNames = {
+//   card: 'card friends__card',
+//   title: 'title card__title',
+//   btn: 'btn card__btn',
+//   img: 'card__img',
+// };
 
-const btnContent = 'Learn more';
+// const btnContent = 'Learn more';
 
 // const getCard = (pet) => {
 //   const clickHandler = () => {
@@ -28,34 +28,34 @@ const btnContent = 'Learn more';
 
 // export default getCard;
 
-class Card {
-  constructor(pet) {
-    this.pet = pet;
+// class Card {
+//   constructor(pet) {
+//     this.pet = pet;
 
-    this.card = createElement('div', classNames.card, '', this.clickHandler);
-    this.img = createImage(pet.img, pet.type, classNames.img);
-    this.title = createElement('p', classNames.title, pet.name);
-    this.btn = createElement('button', classNames.btn, btnContent);
-  }
+//     this.card = createElement('div', classNames.card, '', this.clickHandler);
+//     this.img = createImage(pet.img, pet.type, classNames.img);
+//     this.title = createElement('p', classNames.title, pet.name);
+//     this.btn = createElement('button', classNames.btn, btnContent);
+//   }
 
-  clickHandler() {
-    popup(this.pet);
-  }
+//   clickHandler() {
+//     popup(this.pet);
+//   }
 
-  init() {
+//   init() {
 
-    const { img, title, btn, card } = this;
-    card.append(img, title, btn);
+//     const { img, title, btn, card } = this;
+//     card.append(img, title, btn);
 
-    return card;
-  }
+//     return card;
+//   }
 
-  update(newPet) {
-    this.pet = newPet;
-    this.img.src = newPet.img;
-    this.img.alt = newPet.breed;
-    this.title = newPet.name;
-  }
-}
+//   update(newPet) {
+//     this.pet = newPet;
+//     this.img.src = newPet.img;
+//     this.img.alt = newPet.breed;
+//     this.title = newPet.name;
+//   }
+// }
 
-export default Card;
+// export default Card;
