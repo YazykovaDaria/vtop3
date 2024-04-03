@@ -1,10 +1,11 @@
 extends ../layout/layout
 
 block variables
-  -let title = 'Shelter'
+  -const title = 'Shelter'
+  -const logo = {cls: 'logo--main', href: '#'}
+  -const nav = [{ href: '#', label: 'About the shelter', cls: 'nav__link--active' }, { href: './pets.html', label: 'Our pets' }, { href: '#', label: 'Help the shelter' },{ href: '#', label: 'Contacts' }]
 
 block content
-  include ../components/_header
   h2 content main
-  +btn
-  +img('about-pets.jpg')
+  //- +btn
+  //- +img('about-pets.jpg')
