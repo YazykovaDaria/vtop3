@@ -1,26 +1,32 @@
 .logo {
-  @include flex-col();
+  @include flex-col(10px, center, flex-start);
+  @include transition(color);
 
-  gap: 10px;
-  align-items: center;
-  color: $color-side;
-}
-
-.logo__item {
   color: $color-font-header;
+
+  &--main {
+    pointer-events: none;
+    color: $color-font-side;
+  }
+
+  @include hover(){
+    color: $color-font-side;
+  }
 }
 
-.logo__link {
-  color: $color-font-side;
-  font-size: 32px;
-  font-family: Georgia, serif;
-  line-height: 110%;
+.logo__title {
+  @include font(32px, 110%);
+
   letter-spacing: 0.06em;
 }
 
 .logo__text {
-  font-size: 13px;
+  @include font(13px,0.95rem);
+
   font-family: Arial, sans-serif;
-  line-height: 15px;
   letter-spacing: 0.1em;
+
+  &--main {
+  color: $color-contrast;
+  }
 }
