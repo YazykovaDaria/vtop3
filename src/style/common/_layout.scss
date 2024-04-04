@@ -1,4 +1,6 @@
 html {
+  @include custom-scroll-y();
+
   scroll-behavior: smooth;
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
@@ -11,17 +13,9 @@ body{
 .wrapper {
   @include flex-col();
   min-height: 100%;
+  background-color: $color-contrast;
 }
 
-.header{
-  position: sticky;
-  top: 0;
-}
-
-.main{
+.main {
   flex-grow: 1;
 }
-
-// .footer{
-//   background-color: blue;
-// }
