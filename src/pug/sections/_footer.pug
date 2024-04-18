@@ -1,0 +1,26 @@
+footer.footer
+  .container.footer__inner
+    .footer__links
+      .footer__links-item
+        h2.title.footer__title For questions and suggestions
+        a(href='mailto:email@shelter.com' class='footer__link')
+          .footer__link-svg
+            include ../../assets/icons/footer/icon-email.svg
+          p email@shelter.com
+        a(href='tel:+136745677554' class='footer__link')
+          .footer__link-svg
+            include ../../assets/icons/footer/icon-phone.svg
+          p +13 674 567 75 54
+
+      .footer__links-item
+        h2.title.footer__title We are waiting for your visit
+        a(href='https://maps.app.goo.gl/PrN67m9CvdD9ofUn8' class='footer__link' target='_blank')
+          .footer__link-svg.footer__link-svg--location
+            include ../../assets/icons/footer/icon-marker.svg
+          p 1 Central Street, Boston (entrance from the store)
+        a(href='https://maps.app.goo.gl/huuFhzFHjrUne3ZD6' target='_blank' class='footer__link')
+          .footer__link-svg.footer__link-svg--location
+            include ../../assets/icons/footer/icon-marker.svg
+          p 18 South Park, London
+
+    .footer__img(style="background-image: url('../../assets/images/footer-puppy.png')")
