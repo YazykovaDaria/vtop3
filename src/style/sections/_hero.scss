@@ -1,8 +1,8 @@
 .header-content {
   display: flex;
   justify-content: space-between;
-  padding-left: 40px;
   padding-top: 90px;
+  padding-left: 40px;
 }
 
 .header-content__content {
@@ -14,9 +14,9 @@
 }
 
 .header-content__title {
+  color: $color-contrast;
   font-size: 44px;
   line-height: 130%;
-  color: $color-contrast;
 }
 
 .header-content__text {
@@ -33,16 +33,16 @@
 @media (max-width: 1000px) {
   .header-content {
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
     gap: 100px;
+    align-items: center;
+    justify-content: center;
     padding: 60px 10px 0;
   }
 
   .header-content__content {
-    margin: 0;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    margin: 0;
   }
 
   .header-content__img {

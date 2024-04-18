@@ -3,15 +3,15 @@
   flex-direction: column;
 
   @if $justify != null {
-      justify-content: $justify;
+    justify-content: $justify;
   }
 
   @if $align != null {
-      align-items: $align;
+    align-items: $align;
   }
 
   @if $gap != null {
-      gap: $gap;
+    gap: $gap;
   }
 }
 
@@ -20,15 +20,15 @@
   flex-direction: row;
 
   @if $justify != null {
-      justify-content: $justify;
+    justify-content: $justify;
   }
 
   @if $align != null {
-      align-items: $align;
+    align-items: $align;
   }
 
   @if $gap != null {
-      gap: $gap;
+    gap: $gap;
   }
 }
 
@@ -36,18 +36,18 @@
   display: inline-flex;
 
   @if $direction != null {
-      flex-direction: $direction;
+    flex-direction: $direction;
   }
 
   @if $justify != null {
-      justify-content: $justify;
+    justify-content: $justify;
   }
 
   @if $align != null {
-      align-items: $align;
+    align-items: $align;
   }
 
   @if $gap != null {
-      gap: $gap;
+    gap: $gap;
   }
 }

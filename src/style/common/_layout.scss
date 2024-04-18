@@ -6,12 +6,13 @@ html {
 }
 
 html,
-body{
+body {
   height: 100%;
 }
 
 .wrapper {
   @include flex-col();
+
   min-height: 100%;
   background-color: $color-contrast;
 }

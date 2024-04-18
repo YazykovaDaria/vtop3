@@ -9,7 +9,7 @@
     color: $color-font-side;
   }
 
-  @include hover(){
+  @include hover() {
     color: $color-font-side;
   }
 }
@@ -21,12 +21,12 @@
 }
 
 .logo__text {
-  @include font(13px,0.95rem);
+  @include font(13px, 0.95rem);
 
   font-family: Arial, sans-serif;
   letter-spacing: 0.1em;
 
   &--main {
-  color: $color-contrast;
+    color: $color-contrast;
   }
 }

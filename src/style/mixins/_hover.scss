@@ -1,19 +1,19 @@
 @mixin active() {
   &:active {
-      @content;
+    @content;
   }
 }
 
 @mixin hover() {
   @media (hover: hover) {
-      &:hover {
-          @content;
-      }
+    &:hover {
+      @content;
+    }
   }
 
   @media (hover: none) {
-      @include active() {
-          @content;
-      }
+    @include active() {
+      @content;
+    }
   }
 }

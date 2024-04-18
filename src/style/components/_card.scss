@@ -11,11 +11,11 @@
   &:hover {
     cursor: pointer;
     background-color: $color-contrast;
-    @include transition(0.4s);
+    // @include transition(0.4s);
 
     .card__btn {
       background-color: $bnt-bg-hover;
-      @include transition(0.4s);
+      // @include transition(0.4s);
     }
   }
 }

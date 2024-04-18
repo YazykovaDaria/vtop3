@@ -1,29 +1,29 @@
 @mixin size($w: null, $h: null) {
   @if $w != null {
-      width: $w;
+    width: $w;
   }
 
   @if $h != null {
-      height: $h;
+    height: $h;
   }
 }
 
 @mixin min-size($w: null, $h: null) {
   @if $w != null {
-      min-width: $w;
+    min-width: $w;
   }
 
   @if $h != null {
-      min-height: $h;
+    min-height: $h;
   }
 }
 
 @mixin max-size($w: null, $h: null) {
   @if $w != null {
-      max-width: $w;
+    max-width: $w;
   }
 
   @if $h != null {
-      max-height: $h;
+    max-height: $h;
   }
 }

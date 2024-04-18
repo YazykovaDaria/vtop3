@@ -4,10 +4,10 @@
   transition-timing-function: $func;
 
   @if $prop != all {
-      will-change: $prop;
+    will-change: $prop;
   }
 
   @if $delay != null {
-      transition-delay: $delay;
+    transition-delay: $delay;
   }
 }

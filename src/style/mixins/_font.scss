@@ -6,28 +6,28 @@
 
 @mixin font-size($size: 14px) {
   @if $size != null {
-      font-size: $size;
+    font-size: $size;
   }
 }
 
 @mixin font-height($height: 14px) {
   @if $height != null {
-      line-height: $height;
+    line-height: $height;
   }
 }
 
 @mixin font-weight($weight: null) {
   @if $weight != null {
-      font-weight: $weight;
+    font-weight: $weight;
   }
 }
 
 @mixin text-align($horizontal: null, $vertical: null) {
   @if $horizontal != null {
-      text-align: $horizontal;
+    text-align: $horizontal;
   }
 
   @if $vertical != null {
-      vertical-align: $vertical;
+    vertical-align: $vertical;
   }
 }
