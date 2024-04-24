@@ -1,0 +1,46 @@
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 207px;
+    height: 52px;
+    background-color: $bnt-bg-main;
+    border-radius: 100px;
+    text-align: center;
+    font-size: 17px;
+    color: $color-font-btn;
+
+    &:hover {
+        cursor: pointer;
+        background-color: $bnt-bg-hover;
+
+        // @include transition(0.3s);
+    }
+}
+
+.btn-round {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 52px;
+    height: 52px;
+    background-color: transparent;
+    border: 2px solid $bnt-bg-main;
+    border-radius: 100px;
+
+    &:hover {
+        cursor: pointer;
+        background-color: $bnt-bg-hover;
+
+        // @include transition(0.3s);
+    }
+}
+
+.btn--disabled {
+    border: 2px solid $color-font-header;
+
+    &:hover {
+        background-color: transparent;
+        cursor: default;
+    }
+}
