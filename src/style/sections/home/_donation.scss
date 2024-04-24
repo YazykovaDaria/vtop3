@@ -1,0 +1,79 @@
+$color-subtext: #b2b2b2;
+
+.section-donation {
+    background-color: $color-side;
+}
+
+.donation {
+    &__inner {
+        @include flex-row(30px, center, center);
+    }
+
+    &__bg-img {
+        @include size(505px, 261px);
+
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    &__content {
+        @include flex-col(20px);
+    }
+
+    &__title {
+        max-width: 300px;
+        text-align: start;
+    }
+
+    &__text {
+        color: $color-font-main;
+        text-align: start;
+    }
+
+    &__btn {
+        @include font(20px, 115%);
+
+        gap: 15px;
+        padding: 10px 15px;
+        max-width: 350px;
+        border-radius: 9px;
+
+        letter-spacing: 0.06em;
+        color: $color-font-main;
+    }
+
+    &__subtext {
+        @include font(12px, 150%);
+
+        max-width: 380px;
+
+        font-family: "Arial", sans-serif;
+        font-style: italic;
+        color: $color-subtext;
+    }
+
+    @include media-max-md() {
+        &__inner {
+            flex-direction: column-reverse;
+            gap: 60px;
+        }
+    }
+
+    @include media-max-s() {
+        &__inner {
+            gap: 42px;
+        }
+
+        &__bg-img {
+            @include size(260px, 136px);
+        }
+
+        &__title {
+            text-align: center;
+        }
+
+        &__btn {
+            @include font(15px, 110%);
+        }
+    }
+}

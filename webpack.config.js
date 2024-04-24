@@ -50,6 +50,7 @@ module.exports = {
   resolve: {
     alias: {
       '@images': path.join(__dirname, 'src/assets/images'),
+      '@icons': path.join(__dirname, 'src/assets/icons'),
       '@fonts': path.join(__dirname, 'src/assets/fonts'),
       '@styles': path.join(__dirname, 'src/style'),
       '@scripts': path.join(__dirname, 'src/js'),
