@@ -14,7 +14,9 @@ html(lang='en')
     script(src="@scripts/index.js" defer="defer")
 
   body.wrapper
-    +header(logo, nav)
+    //- +header(cls, nav)
+
+    include ../sections/_header
     main.main
       block content
-    include ../components/_footer
+    include ../sections/_footer

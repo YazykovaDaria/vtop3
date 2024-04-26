@@ -2,11 +2,13 @@ extends ../layout/layout
 
 block variables
   -const title = 'Shelter'
-  -const cls = 'main'
+  -const logoCls = 'logo--home'
+  -const headerCls = 'header--home'
   -const nav = [{ href: '#', label: 'About the shelter', cls: 'active' }, { href: './pets.html', label: 'Our pets' }, { href: '#help', label: 'Help the shelter' },{ href: '#footer', label: 'Contacts' }]
 
 block content
 
+  include ../sections/home/_hero
   include ../sections/home/_about
   include ../sections/home/_help
   include ../sections/home/_donation

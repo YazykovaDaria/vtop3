@@ -1,32 +1,33 @@
 .logo {
-  @include flex-col(10px, center, flex-start);
-  @include transition(color);
+    @include flex-col(10px, center, flex-start);
+    @include transition(color);
 
-  color: $color-font-header;
+    color: $color-font-main;
 
-  &--main {
-    pointer-events: none;
-    color: $color-font-side;
-  }
+    @include hover() {
+        color: $color-font-side;
+    }
 
-  @include hover() {
-    color: $color-font-side;
-  }
-}
+    &__title {
+        @include font(32px, 110%);
 
-.logo__title {
-  @include font(32px, 110%);
+        letter-spacing: 0.06em;
+    }
 
-  letter-spacing: 0.06em;
-}
+    &__text {
+        @include font(13px, 0.95rem);
 
-.logo__text {
-  @include font(13px, 0.95rem);
+        font-family: Arial, sans-serif;
+        letter-spacing: 0.1em;
+        color: $color-font-btn;
+    }
 
-  font-family: Arial, sans-serif;
-  letter-spacing: 0.1em;
+    &--home {
+        pointer-events: none;
+        color: $color-font-side;
 
-  &--main {
-    color: $color-contrast;
-  }
+        .logo__text {
+            color: $color-contrast;
+        }
+    }
 }
