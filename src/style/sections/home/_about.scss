@@ -17,6 +17,11 @@
         @include flex-col();
 
         gap: 25px;
+        max-width: 430px;
+        margin-block: 14px;
+    }
+
+    &__title {
         max-width: 380px;
     }
 
@@ -29,6 +34,10 @@
             flex-direction: column-reverse;
             gap: 80px;
             align-items: center;
+        }
+
+        &__content {
+            margin-block: 0;
         }
     }
 
