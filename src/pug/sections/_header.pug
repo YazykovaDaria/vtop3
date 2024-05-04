@@ -1,4 +1,4 @@
-header(class=`header ${headerCls}`)
+header(class=`header js-header ${headerCls}`)
   .container
     header.header__nav
       +logo(logoCls)
@@ -8,6 +8,10 @@ header(class=`header ${headerCls}`)
           li
             a(class=`header__link header__link--${item.cls}` href=item.href)=item.label
 
-      .burger.js-burger
-        -for (let x = 0; x < 3; x++)
-          span(class=`burger__line burger__line--${cls}`)
+      +burger(burgerCls)
+
+      .header__nav-bg.js-close-menu
+        ul.header__list--mobile
+          each item in nav
+            li
+              a(class=`header__link js-close-menu header__link--${item.cls}` href=item.href)=item.label
