@@ -2,7 +2,7 @@ html {
     @include custom-scroll-y();
 
     scroll-behavior: smooth;
-    scroll-margin-top: 20px;
+    scrollbar-gutter: stable;
     font-family: Georgia, "Times New Roman", Times, serif;
 }
 

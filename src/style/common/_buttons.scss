@@ -3,10 +3,10 @@
     @include transition(background-color);
 
     padding: 15px 45px;
-    // width: 207px;
-    // height: 52px;
+
     background-color: $bnt-bg-main;
     border-radius: 100px;
+
     text-align: center;
     font-size: 17px;
     color: $color-font-btn;
@@ -18,20 +18,18 @@
 }
 
 .btn-round {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 52px;
-    height: 52px;
+    @include flex-row(null, center, center);
+    @include size(52px, 53px);
+    @include transition(background-color);
+
     background-color: transparent;
     border: 2px solid $bnt-bg-main;
     border-radius: 100px;
 
-    &:hover {
+    @include hover() {
         cursor: pointer;
         background-color: $bnt-bg-hover;
-
-        // @include transition(0.3s);
+        border-color: $bnt-bg-hover;
     }
 }
 
