@@ -1,35 +1,32 @@
 .card {
-  @include flex-col();
-  gap: 30px;
-  align-items: center;
-  width: 270px;
-  height: 435px;
-  padding-bottom: 30px;
-  background-color: $bg-card;
-  border-radius: 10px;
+    @include flex-col(30px, center);
+    @include size(270px, 435px);
+    @include transition(background-color box-shadow);
 
-  &:hover {
-    cursor: pointer;
-    background-color: $color-contrast;
-    // @include transition(0.4s);
+    background-color: $bg-card;
+    border-radius: 10px;
 
-    .card__btn {
-      background-color: $bnt-bg-hover;
-      // @include transition(0.4s);
+    &__img {
+        border-radius: 10px;
     }
-  }
-}
 
-.card__img {
-  border-radius: 10px;
-}
+    &__title {
+        font-size: 20px;
+        text-align: center;
+    }
 
-.card__title {
-  font-size: 20px;
-  text-align: center;
-}
+    &__btn {
+        background-color: transparent;
+        border: 2px solid $bnt-bg-main;
+    }
 
-.card__btn {
-  background-color: transparent;
-  border: 2px solid $bnt-bg-main;
+    @include hover() {
+        cursor: pointer;
+        background-color: $color-contrast;
+        box-shadow: 0 2px 35px 14px rgba(13, 13, 13, 0.04);
+
+        .card__btn {
+            background-color: $bnt-bg-hover;
+        }
+    }
 }
