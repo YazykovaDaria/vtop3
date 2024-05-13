@@ -5,7 +5,7 @@
 const path = require('path');
 const globule = require('globule');
 const fs = require('fs');
-// const CopyWebpackPlugin = require('copy-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlBundlerPlugin = require('html-bundler-webpack-plugin');
 
 const mode = process.env.NODE_ENV || 'development';
@@ -63,6 +63,17 @@ module.exports = {
   },
 
   plugins: [
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: 'src/assets/images/pets',
+          to: 'img',
+          globOptions: {
+            ignore: ['**/*.html'],
+          },
+        },
+      ],
+    }),
     new HtmlBundlerPlugin({
       entry: pages,
       js: {
@@ -87,6 +98,29 @@ module.exports = {
         generator: {
           filename: 'img/[name].[hash:8][ext]',
         },
+        use: [
+          {
+            loader: 'image-webpack-loader',
+            options: {
+              mozjpeg: {
+                progressive: true,
+              },
+              optipng: {
+                enabled: false,
+              },
+              pngquant: {
+                quality: [0.65, 0.9],
+                speed: 4,
+              },
+              gifsicle: {
+                interlaced: false,
+              },
+              webp: {
+                quality: 75,
+              },
+            },
+          },
+        ],
       },
       {
         test: /[\\/]fonts[\\/].+(woff2?|ttf|otf|eot)$/,
@@ -97,118 +131,4 @@ module.exports = {
       },
     ],
   },
-  // plugins: [
-  // new PugPlugin({
-  //   entry: {
-  //     // define many page templates here
-  //     index: 'src/pages/index.pug', // => dist/index.html
-  //   },
-  //   js: {
-  //     // JS output filename
-  //     filename: 'js/[name].[contenthash:8].js',
-  //   },
-  //   css: {
-  //     // CSS output filename
-  //     filename: 'css/[name].[contenthash:8].css',
-  //   },
-  // }),
-  // new MiniCssExtractPlugin({
-  //   filename: '[name].[contenthash].css',
-  // }),
-  // new CopyWebpackPlugin({
-  //   patterns: [
-  //     {
-  //       from: path.resolve(__dirname, 'src', 'assets', 'images'),
-  //       to: path.resolve(__dirname, 'dist', 'assets', 'images'),
-  //     },
-  //   ],
-  // }),
-  // ],
-
-  // .concat(
-  //   pages.map(
-  //     (pugPath) =>
-  //       new HtmlWebpackPlugin({
-  //         template: pugPath,
-  //         filename: `${pugPath.split(/\/|.pug/).splice(-2, 1)}.html`,
-  //       })
-  //   )
-  // ),
-  // module: {
-  //   rules: [
-  //     {
-  //       test: /\.pug$/,
-  //       loader: PugPlugin.loader, // the Pug loader
-  //     },
-  //     {
-  //       test: /\.html$/i,
-  //       loader: 'html-loader',
-  //     },
-  //     {
-  //       test: /\.(c|sa|sc)ss$/i,
-  //       use: [
-  //         devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
-  //         'css-loader',
-  //         {
-  //           loader: 'postcss-loader',
-  //           options: {
-  //             postcssOptions: {
-  //               plugins: [require('postcss-preset-env')],
-  //             },
-  //           },
-  //         },
-  //         'sass-loader',
-  //       ],
-  //     },
-  //     {
-  //       test: /\.(jpe?g|png|webp|gif|svg|ico)$/i,
-  //       use: [
-  //         {
-  //           loader: 'image-webpack-loader',
-  //           options: {
-  //             mozjpeg: {
-  //               progressive: true,
-  //             },
-  //             optipng: {
-  //               enabled: false,
-  //             },
-  //             pngquant: {
-  //               quality: [0.65, 0.9],
-  //               speed: 4,
-  //             },
-  //             gifsicle: {
-  //               interlaced: false,
-  //             },
-  //             webp: {
-  //               quality: 75,
-  //             },
-  //           },
-  //         },
-  //       ],
-  //       type: 'asset/resource',
-  //     },
-  //     {
-  //       test: /\.woff2?$/i,
-  //       type: 'asset/resource',
-  //       generator: {
-  //         filename: 'fonts/[name][ext]',
-  //       },
-  //     },
-  //     {
-  //       test: /\.pug$/,
-  //       loader: 'pug-loader',
-  //       exclude: /(node_modules|bower_components)/,
-  //     },
-  //     {
-  //       test: /\.m?js$/i,
-  //       exclude: /(node_modules|bower_components)/,
-  //       use: {
-  //         loader: 'babel-loader',
-  //         options: {
-  //           presets: ['@babel/preset-env'],
-  //         },
-  //       },
-  //     },
-  //   ],
-  // },
 };
