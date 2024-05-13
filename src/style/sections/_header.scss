@@ -8,6 +8,7 @@
     height: $h-header;
     padding-block: 30px;
     background-color: $color-contrast;
+    z-index: $z-header;
 
     &__nav {
         @include flex-row(null, center, space-between);
@@ -23,7 +24,7 @@
             max-width: 320px;
             width: 100%;
             height: 100%;
-            background-color: $color-font-btn;
+            background-color: $color-contrast;
         }
     }
 
@@ -101,6 +102,10 @@
             @include hover() {
                 color: $bg-card;
             }
+        }
+
+        .header__list--mobile {
+            background-color: $color-font-btn;
         }
     }
 

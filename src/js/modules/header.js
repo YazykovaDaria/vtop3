@@ -7,6 +7,7 @@ const CSS_CLASSES = {
   activeBurger: 'burger--active',
   acativeHeader: 'header--active',
   scrolledHeader: 'header--scrolled',
+  headerHome: 'header--home',
   hideHeader: 'header--hide',
 };
 
@@ -54,9 +55,13 @@ const changeHeaderBg = (scrollPosition) => {
 
 const scrolledHeader = () => {
   const scrollPosition = window.scrollY;
-  const containHide = containCls(headerEl, CSS_CLASSES.hideHeader);
 
-  changeHeaderBg(scrollPosition);
+  const isHomePage = containCls(headerEl, CSS_CLASSES.headerHome);
+  if (isHomePage) {
+    changeHeaderBg(scrollPosition);
+  }
+
+  const containHide = containCls(headerEl, CSS_CLASSES.hideHeader);
 
   if (scrollPosition > lastScroll && !containHide && scrollPosition > defaultOffset) {
     // scroll down
