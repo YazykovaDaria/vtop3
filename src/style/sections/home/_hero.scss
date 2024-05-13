@@ -1,7 +1,7 @@
 .section-hero {
     @include bg-gradient();
 
-    padding-top: $h-header;
+    padding-top: calc($h-header * 2);
     margin-top: -$h-header;
 }
 
