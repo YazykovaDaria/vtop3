@@ -1,4 +1,4 @@
-import blockPageScroll from '../helpers/helpers';
+import blockPageScroll, { getChild } from '../helpers/helpers';
 import getPet from '../store/store';
 
 const POPOP_TRIGGER_SELECTOR = '.js-open-popup';
@@ -10,7 +10,7 @@ const CSS_CLASSES = {
 };
 
 const popupEl = document.querySelector(POPUP_SELECTOR);
-const popupBodyEl = popupEl.querySelector(PUPUP_BODY_SELECTOR);
+const popupBodyEl = getChild(popupEl, PUPUP_BODY_SELECTOR);
 
 const addPopupContent = (pet) => {
   const template = `<div class="card-popup">
@@ -66,6 +66,8 @@ const closePopup = (e) => {
 };
 
 const goPopup = () => {
+  if (!popupEl) return;
+
   document.body.addEventListener('click', openPopup);
 
   popupEl.addEventListener('click', closePopup);

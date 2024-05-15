@@ -1,4 +1,4 @@
-import blockPageScroll, { containCls } from '../helpers/helpers';
+import blockPageScroll, { containCls, getChild } from '../helpers/helpers';
 
 const HEADER_SELECTOR = '.js-header';
 const BURGER_SELECTOR = '.js-burger';
@@ -12,7 +12,7 @@ const CSS_CLASSES = {
 };
 
 const headerEl = document.querySelector(HEADER_SELECTOR);
-const burgerEl = headerEl.querySelector(BURGER_SELECTOR);
+const burgerEl = getChild(headerEl, BURGER_SELECTOR);
 
 const defaultOffset = 300;
 
@@ -75,6 +75,8 @@ const scrolledHeader = () => {
 };
 
 const goHeader = () => {
+  if (!headerEl) return;
+
   window.addEventListener('scroll', scrolledHeader);
 
   burgerEl.addEventListener('click', toggleMenu);
