@@ -1,40 +1,30 @@
+.section-friends {
+    background-color: $color-side;
+}
+
 .friends {
-  @include flex-col();
+    &__inner {
+        @include flex-col(60px, center);
+    }
 
-  gap: 60px;
-  align-items: center;
-  padding: 80px 40px 100px;
-  background-color: $color-side;
+    &__title {
+        max-width: 400px;
+    }
+
+    &__slider {
+        @include flex-row(null, center, space-between);
+
+        width: 100%;
+    }
+
+    &__btn {
+        flex-shrink: 0;
+    }
+
+    &__cards {
+        @include flex-row($justify: space-between);
+
+        max-width: 990px;
+        width: 100%;
+    }
 }
-
-.friends__btn {
-  width: 261px;
-  height: 52px;
-}
-
-.friends__cards {
-display: flex;
-justify-content: center;
-gap: 90px;
-}
-
-@media (max-width: 1200px) {
-.friends__cards {
-  gap: 40px;
-}
-
-// .friends__card {
-//   &:last-child {
-//     display: none;
-//   }
-// }
-}
-
-// @media (max-width: 740px) {
-
-//   .friends__card {
-//     &:first-child {
-//       display: none;
-//     }
-//   }
-// }

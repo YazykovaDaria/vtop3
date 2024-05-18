@@ -1,12 +1,11 @@
 import goHeader from './modules/header';
-import goPopup from "./modules/popup";
+import goPopup from './modules/popup';
+import slider from "./modules/slider";
 
 const app = () => {
   goHeader();
   goPopup();
+  slider();
 };
 
 app();
-
-// document.body.classList.add("popup-opened");
-// document.body.clientWidth > width ? document.body.style.paddingRight = `${document.body.clientWidth - width}px` : null;
