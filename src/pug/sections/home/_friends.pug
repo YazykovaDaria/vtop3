@@ -1,35 +1,22 @@
-- var friends = [ {id: 5, img: 'pets-katrine.png', name: 'Katrine'}, {id: 1, img: 'pets-jennifer.png', name: 'Jennifer'}, {id: 3, img: 'pets-woody.png', name: 'Woody'} ]
-
 section.section.section-friends
   .container.friends__inner
     h2.title.title--center.friends__title Our friends who are looking for a house
 
     .friends__slider.js-slider
-      button.btn-round.friends__btn.js-slide-prev
+      button.btn-round.friends__btn.friends__tablet.js-slide-prev
         include ../../../assets/icons/Arrow-left.svg
 
       .slider
         .slider__wrapper.js-slider-wrapper
-          .slider__slide.js-slide
-            .friends__cards
-              each friend in friends
-                +card(friend)
 
-
-          .slider__slide.js-slide
-            .friends__cards
-              each friend in friends
-                +card(friend)
-
-
-          .slider__slide.js-slide
-            .friends__cards
-              each friend in friends
-                +card(friend)
-
-
-      button.btn-round.friends__btn.js-slide-next
+      button.btn-round.friends__btn.friends__tablet.js-slide-next
         include ../../../assets/icons/Arrow-right.svg
 
+      .friends__buttons.friends__mobile
+        button.btn-round.friends__btn.js-slide-prev
+          include ../../../assets/icons/Arrow-left.svg
+
+        button.btn-round.friends__btn.js-slide-next
+          include ../../../assets/icons/Arrow-right.svg
 
     a.btn(href="./pets.html") Get to know the rest

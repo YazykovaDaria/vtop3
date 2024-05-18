@@ -14,4 +14,9 @@
     &__slide {
         min-width: 100%;
     }
+
+    @include media-max-custom(1160px) {
+        margin-left: 0.75rem;
+        margin-right: 0.75rem;
+    }
 }

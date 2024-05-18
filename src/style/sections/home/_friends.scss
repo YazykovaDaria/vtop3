@@ -27,4 +27,34 @@
         max-width: 990px;
         width: 100%;
     }
+
+    &__mobile {
+        display: none;
+    }
+
+    @include media-max-custom(1060px) {
+        &__cards {
+            justify-content: center;
+            gap: 40px;
+        }
+    }
+
+    @include media-max-custom(740px) {
+        &__inner {
+            gap: 42px;
+        }
+
+        &__slider {
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        &__mobile {
+            @include flex-row(80px);
+        }
+
+        &__tablet {
+            display: none;
+        }
+    }
 }
