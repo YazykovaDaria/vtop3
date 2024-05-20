@@ -4,7 +4,7 @@
 /* eslint-disable global-require */
 const path = require('path');
 const globule = require('globule');
-const fs = require('fs');
+// const fs = require('fs');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlBundlerPlugin = require('html-bundler-webpack-plugin');
 
@@ -12,15 +12,6 @@ const mode = process.env.NODE_ENV || 'development';
 const devMode = mode === 'development';
 const target = devMode ? 'web' : 'browserslist';
 const devtool = devMode ? 'source-map' : undefined;
-
-const mixins = globule
-  .find(['src/pug/mixins/**/_*.pug', '!src/pug/mixins/mixins.pug'])
-  .map((mixinPath) => mixinPath.split('/').pop())
-  .reduce((acc, currentItem) => `${acc}include ${currentItem}\n`, ``);
-
-fs.writeFile('src/pug/mixins/mixins.pug', mixins, (err) => {
-  if (err) throw err;
-});
 
 const pathToPages = path.join(__dirname, 'src/pug/pages');
 
@@ -66,8 +57,8 @@ module.exports = {
     new CopyWebpackPlugin({
       patterns: [
         {
-          from: 'src/assets/images/pets',
-          to: 'img',
+          from: 'src/assets/images',
+          to: 'assets/images',
           globOptions: {
             ignore: ['**/*.html'],
           },
