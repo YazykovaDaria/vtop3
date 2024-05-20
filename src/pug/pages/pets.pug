@@ -2,7 +2,10 @@ extends ../layout/layout
 
 block variables
   -const title = 'Pets'
-  -const nav = [{ href: '#', label: 'About the shelter'}, { href: '#', label: 'Our pets', cls: 'active' }, { href: '#', label: 'Help the shelter' },{ href: '#', label: 'Contacts' }]
+  -const logoCls = ''
+  -const headerCls = ''
+  -const burgerCls = ''
+  -const nav = [{ href: './index.html', label: 'About the shelter'}, { href: '#', label: 'Our pets', cls: 'active' }, { href: './index.html#help', label: 'Help the shelter' },{ href: '#footer', label: 'Contacts' }]
 
 block content
-  h2 content pets
+  include ../sections/pets/_looking
