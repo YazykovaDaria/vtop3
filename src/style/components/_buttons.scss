@@ -31,6 +31,17 @@
         background-color: $bnt-bg-hover;
         border-color: $bnt-bg-hover;
     }
+
+    &--active {
+        background-color: $bnt-bg-hover;
+        border-color: $bnt-bg-hover;
+    }
+
+    &:disabled {
+        border: 2px solid $color-font-header;
+        pointer-events: none;
+        color: $color-font-header;
+    }
 }
 
 .btn--disabled {
