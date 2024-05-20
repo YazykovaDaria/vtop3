@@ -36,7 +36,7 @@ const getSlides = () => {
 
   if (!Array.isArray(pets)) return;
 
-    for (let i = 0; i < pets.length; i += cardCount) {
+  for (let i = 0; i < pets.length; i += cardCount) {
     const cardsSet = pets.slice(i, i + cardCount);
 
     if (cardsSet.length !== cardCount) {

@@ -38,6 +38,7 @@ const closeMenu = (e) => {
     blockPageScroll(isScroll);
 
     headerEl.classList.remove(CSS_CLASSES.acativeHeader);
+    burgerEl.classList.remove(CSS_CLASSES.activeBurger);
   }
 };
 
