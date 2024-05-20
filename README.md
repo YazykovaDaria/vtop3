@@ -1,4 +1,4 @@
-simple two-page applicate
+simple two-page application
 
 stack: js, scss, pug, webpack
 
