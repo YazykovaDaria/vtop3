@@ -11,12 +11,14 @@ html(lang='en')
     link(rel='icon' href='../../assets/images/footer-puppy.ico' type='image/png')
     title=title
     link(href="@styles/index.scss" rel="stylesheet")
-    script(src="@scripts/index.js" defer="defer")
 
   body.wrapper
     include ../sections/_header
+
     main.main
       block content
 
     include ../sections/_footer
     include ../components/_popup
+
+    script(src="@scripts/index.js" defer="defer")

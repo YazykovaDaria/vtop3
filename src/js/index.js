@@ -1,6 +1,6 @@
 import goHeader from './modules/header';
 import goPopup from './modules/popup';
-import slider from "./modules/slider";
+import slider from './modules/slider';
 
 const app = () => {
   goHeader();
@@ -8,4 +8,4 @@ const app = () => {
   slider();
 };
 
-app();
+document.addEventListener('DOMContentLoaded', () => app());
