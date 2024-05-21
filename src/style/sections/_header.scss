@@ -2,13 +2,13 @@
     @include flex-col(null, center);
     @include transition(transform, 0.1s, linear);
 
-    position: fixed;
-    top: 0;
-    width: 100%;
-    height: $h-header;
-    padding-block: 30px;
-    background-color: $color-contrast;
-    z-index: $z-header;
+    // position: fixed;
+    // top: 0;
+    // width: 100%;
+    // height: $h-header;
+    // padding-block: 30px;
+    // background-color: $color-contrast;
+    // z-index: $z-header;
 
     &__nav {
         @include flex-row(null, center, space-between);
@@ -32,94 +32,94 @@
         @include font(15px, 160%);
         @include transition(color);
 
-        position: relative;
+        // position: relative;
 
-        font-family: "Arial";
-        color: $color-font-main;
+        // font-family: "Arial";
+        // color: $color-font-main;
 
-        &::after {
-            @include transition(width, 0.3s, linear);
+        // &::after {
+        //     @include transition(width, 0.3s, linear);
 
-            content: " ";
-            background: $color-font-side;
-            width: 0;
-            height: 3px;
-            position: absolute;
-            bottom: -8px;
-            left: 0px;
-        }
+        //     content: " ";
+        //     background: $color-font-side;
+        //     width: 0;
+        //     height: 3px;
+        //     position: absolute;
+        //     bottom: -8px;
+        //     left: 0px;
+        // }
 
-        @include hover() {
-            color: $color-font-btn;
+        // @include hover() {
+        //     color: $color-font-btn;
 
-            &::after {
-                width: 100%;
-            }
-        }
+        //     &::after {
+        //         width: 100%;
+        //     }
+        // }
 
-        &--active {
-            color: $color-font-btn;
-            pointer-events: none;
+        // &--active {
+        //     color: $color-font-btn;
+        //     pointer-events: none;
 
-            &::after {
-                width: 100%;
-            }
-        }
+        //     &::after {
+        //         width: 100%;
+        //     }
+        // }
     }
 
-    &__nav-bg {
-        @include flex-row(null, null, flex-end);
-        @include transition(left, 0.4s, linear);
+    // &__nav-bg {
+    //     @include flex-row(null, null, flex-end);
+    //     @include transition(left, 0.4s, linear);
 
-        position: absolute;
-        top: 0;
-        left: 100%;
-        width: 100%;
-        height: 100vh;
-        background: rgba(41, 41, 41, 0.6);
-    }
+    //     position: absolute;
+    //     top: 0;
+    //     left: 100%;
+    //     width: 100%;
+    //     height: 100vh;
+    //     background: rgba(41, 41, 41, 0.6);
+    // }
 
-    &--active {
-        .header__nav-bg {
-            left: 0;
-        }
-    }
+    // &--active {
+    //     .header__nav-bg {
+    //         left: 0;
+    //     }
+    // }
 
-    &--hide {
-        transform: translateY(-$h-header);
-    }
+    // &--hide {
+    //     transform: translateY(-$h-header);
+    // }
 
-    &--home {
-        background-color: transparent;
+    // &--home {
+    //     background-color: transparent;
 
-        &.header--scrolled {
-            @include bg-gradient();
-        }
+    //     &.header--scrolled {
+    //         @include bg-gradient();
+    //     }
 
-        .header__link {
-            color: $color-font-header;
+    //     .header__link {
+    //         color: $color-font-header;
 
-            @include hover() {
-                color: $bg-card;
-            }
-        }
+    //         @include hover() {
+    //             color: $bg-card;
+    //         }
+    //     }
 
-        .header__list--mobile {
-            background-color: $color-font-btn;
-        }
-    }
+    //     .header__list--mobile {
+    //         background-color: $color-font-btn;
+    //     }
+    // }
 
-    @include media-max-custom(740px) {
-        &__nav {
-            padding-left: 10px;
-            padding-right: 10px;
-        }
-        &__list--desctop {
-            display: none;
-        }
+    // @include media-max-custom(740px) {
+    //     &__nav {
+    //         padding-left: 10px;
+    //         padding-right: 10px;
+    //     }
+    //     &__list--desctop {
+    //         display: none;
+    //     }
 
-        &__link {
-            font-size: 32px;
-        }
-    }
+    //     &__link {
+    //         font-size: 32px;
+    //     }
+    // }
 }

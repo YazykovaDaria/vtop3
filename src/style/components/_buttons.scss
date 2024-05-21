@@ -4,16 +4,16 @@
 
     padding: 15px 45px;
 
-    background-color: $bnt-bg-main;
+    // background-color: $bnt-bg-main;
     border-radius: 100px;
 
     text-align: center;
     font-size: 17px;
-    color: $color-font-btn;
+    // color: $color-font-btn;
 
     @include hover() {
         cursor: pointer;
-        background-color: $bnt-bg-hover;
+        // background-color: $bnt-bg-hover;
     }
 }
 
@@ -23,29 +23,29 @@
     @include transition(background-color);
 
     background-color: transparent;
-    border: 2px solid $bnt-bg-main;
+    // border: 2px solid $bnt-bg-main;
     border-radius: 100px;
 
     @include hover() {
         cursor: pointer;
-        background-color: $bnt-bg-hover;
-        border-color: $bnt-bg-hover;
+        // background-color: $bnt-bg-hover;
+        // border-color: $bnt-bg-hover;
     }
 
     &--active {
-        background-color: $bnt-bg-hover;
-        border-color: $bnt-bg-hover;
+        // background-color: $bnt-bg-hover;
+        // border-color: $bnt-bg-hover;
     }
 
     &:disabled {
-        border: 2px solid $color-font-header;
-        pointer-events: none;
-        color: $color-font-header;
+        // border: 2px solid $color-font-header;
+        // pointer-events: none;
+        // color: $color-font-header;
     }
 }
 
 .btn--disabled {
-    border: 2px solid $color-font-header;
+    // border: 2px solid $color-font-header;
 
     &:hover {
         background-color: transparent;

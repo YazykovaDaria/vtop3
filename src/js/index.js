@@ -1,13 +1,9 @@
-import goHeader from './modules/header';
-import goPopup from './modules/popup';
-import slider from './modules/slider';
-import pagination from './modules/pagination';
+// import goHeader from './modules/header';
 
 const app = () => {
-  goHeader();
-  goPopup();
-  slider();
-  pagination();
+  // goHeader();
+
+  console.log('hi');
 };
 
 document.addEventListener('DOMContentLoaded', () => app());

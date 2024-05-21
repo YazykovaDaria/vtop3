@@ -3,7 +3,7 @@ html {
 
     scroll-behavior: smooth;
     scrollbar-gutter: stable;
-    font-family: Georgia, "Times New Roman", Times, serif;
+    // font-family: Georgia, "Times New Roman", Times, serif;
 }
 
 html,
@@ -15,7 +15,7 @@ body {
     @include flex-col();
 
     min-height: 100%;
-    background-color: $color-contrast;
+    // background-color: $color-contrast;
 }
 
 .main {

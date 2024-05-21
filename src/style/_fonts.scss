@@ -1,34 +1,13 @@
-@font-face {
-  font-weight: 400;
-  font-family: Georgia;
-  font-style: normal;
-  src: url('../assets/fonts/Georgia.woff2') format('woff2');
+.jost {
+    font-family: "Jost", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
 }
 
-@font-face {
-  font-weight: 700;
-  font-family: Georgia;
-  font-style: normal;
-  src: url('../assets/fonts/Georgia-Bold.woff2') format('woff2');
-}
-
-@font-face {
-  font-weight: 400;
-  font-family: Georgia;
-  font-style: italic;
-  src: url('../assets/fonts/Georgia-Italic.woff2') format('woff2');
-}
-
-@font-face {
-  font-weight: 400;
-  font-family: Arial;
-  font-style: normal;
-  src: url('../assets/fonts/ArialMT.woff2') format('woff2');
-}
-
-@font-face {
-  font-weight: 400;
-  font-family: Arial;
-  font-style: italic;
-  src: url('../assets/fonts/Arial-ItalicMT.woff2') format('woff2');
+.lexend {
+    font-family: "Lexend", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
 }

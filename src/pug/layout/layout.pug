@@ -8,9 +8,13 @@ html(lang='en')
     meta(charset='UTF-8')
     meta(http-equiv='X-UA-Compatible' content='IE=edge')
     meta(name='viewport' content='width=device-width, initial-scale=1.0')
-    link(rel='icon' href='../../assets/images/footer-puppy.ico' type='image/png')
+    //- link(rel='icon' href='../../assets/images/footer-puppy.ico' type='image/png')
     title=title
     link(href="@styles/index.scss" rel="stylesheet")
+
+    style.
+      @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Jost:ital@0;1&display=swap');
 
   body.wrapper
     include ../sections/_header
@@ -19,6 +23,5 @@ html(lang='en')
       block content
 
     include ../sections/_footer
-    include ../components/_popup
 
     script(src="@scripts/index.js" defer="defer")

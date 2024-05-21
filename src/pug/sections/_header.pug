@@ -1,17 +1,17 @@
-header(class=`header js-header ${headerCls}`)
-  .container
-    .header__nav
-      +logo(logoCls)
+header(class=`header js-header`)
+  .container header
+    //- .header__nav
+    //-   +logo(logoCls)
 
-      ul.header__list.header__list--desctop
-        each item in nav
-          li
-            a(class=`header__link header__link--${item.cls}` href=item.href)=item.label
+    //-   ul.header__list.header__list--desctop
+    //-     each item in nav
+    //-       li
+    //-         a(class=`header__link header__link--${item.cls}` href=item.href)=item.label
 
-      +burger(burgerCls)
+    //-   +burger(burgerCls)
 
-      .header__nav-bg.js-close-menu
-        ul.header__list--mobile
-          each item in nav
-            li
-              a(class=`header__link js-close-menu header__link--${item.cls}` href=item.href)=item.label
+    //-   .header__nav-bg.js-close-menu
+    //-     ul.header__list--mobile
+    //-       each item in nav
+    //-         li
+    //-           a(class=`header__link js-close-menu header__link--${item.cls}` href=item.href)=item.label

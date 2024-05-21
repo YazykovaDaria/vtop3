@@ -18,12 +18,12 @@
         @include transition(width);
 
         height: 2px;
-        background-color: $color-font-main;
+        // background-color: $color-font-main;
     }
 
     &--home {
         .burger__line {
-            background-color: $color-font-side;
+            // background-color: $color-font-side;
         }
     }
 

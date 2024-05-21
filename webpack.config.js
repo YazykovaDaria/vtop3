@@ -4,8 +4,6 @@
 /* eslint-disable global-require */
 const path = require('path');
 const globule = require('globule');
-// const fs = require('fs');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlBundlerPlugin = require('html-bundler-webpack-plugin');
 
 const mode = process.env.NODE_ENV || 'development';
@@ -54,17 +52,6 @@ module.exports = {
   },
 
   plugins: [
-    new CopyWebpackPlugin({
-      patterns: [
-        {
-          from: 'src/assets/images',
-          to: 'assets/images',
-          globOptions: {
-            ignore: ['**/*.html'],
-          },
-        },
-      ],
-    }),
     new HtmlBundlerPlugin({
       entry: pages,
       js: {
