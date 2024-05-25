@@ -1,17 +1,31 @@
 header(class=`header js-header`)
-  .container header
-    //- .header__nav
-    //-   +logo(logoCls)
+  .container
+    .header__inner
+      nav.header__nav
 
-    //-   ul.header__list.header__list--desctop
-    //-     each item in nav
-    //-       li
-    //-         a(class=`header__link header__link--${item.cls}` href=item.href)=item.label
+        ul.header__list.header__desctop
+          each item in nav
+            li
+              a.link(href=item.href)=item.label
 
-    //-   +burger(burgerCls)
+        .header__btns
+          +lng-switcher()
 
-    //-   .header__nav-bg.js-close-menu
-    //-     ul.header__list--mobile
-    //-       each item in nav
-    //-         li
-    //-           a(class=`header__link js-close-menu header__link--${item.cls}` href=item.href)=item.label
+          a.btn-side.header__desctop(href="#") LOG IN
+          a.btn-main.header__desctop(href="#") SIGN UP
+
+        .header__tablet
+          +burger()
+
+      .header__nav-bg.js-close-menu
+        .header__nav--tablet
+
+          ul.header__list--tablet
+            each item in nav
+              li.header__item
+                a.link.header__link.js-close-menu(href=item.href)=item.label
+
+          .header__list--tablet
+            a.btn-side.header__btn.header__btn--tablet(href="#") LOG IN
+
+            a.btn-main.header__btn--tablet(href="#") SIGN UP
