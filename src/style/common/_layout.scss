@@ -1,9 +1,8 @@
 html {
-    @include custom-scroll-y();
+    // @include custom-scroll-y();
 
     scroll-behavior: smooth;
     scrollbar-gutter: stable;
-    // font-family: Georgia, "Times New Roman", Times, serif;
 }
 
 html,
@@ -11,11 +10,19 @@ body {
     height: 100%;
 }
 
-.wrapper {
+.body-wrapper {
     @include flex-col();
-
+    @include font(16px, 125%, 400);
+    position: relative;
     min-height: 100%;
-    // background-color: $color-contrast;
+    width: 100%;
+    overflow: hidden;
+
+    font-family: "Lexend", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    color: $font-color;
+    background-color: $bg-main;
 }
 
 .main {

@@ -1,0 +1,18 @@
+mixin lng-switcher()
+  form.dropdown.js-lng-switch(action=" ")
+    .lng-switcher
+      include ../../assets/icons/Union.svg
+
+      span.lng-switcher__indicator.js-indicator en
+
+    .dropdown__content
+      .lng-switcher__list
+
+        label.lng-switcher__item en
+          input(type="radio" name="lang" value="en" checked)
+
+        label.lng-switcher__item ru
+          input(type="radio" name="lang" value="ru")
+
+        label.lng-switcher__item kz
+          input(type="radio" name="lang" value="kz")

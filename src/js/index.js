@@ -1,9 +1,9 @@
-// import goHeader from './modules/header';
+import goHeader from './modules/header';
+import lngSwitcher from './modules/lng-switcher';
 
 const app = () => {
-  // goHeader();
-
-  console.log('hi');
+  goHeader();
+  lngSwitcher();
 };
 
 document.addEventListener('DOMContentLoaded', () => app());

@@ -1,0 +1,65 @@
+.lng-switcher {
+    @include flex-row(null, center);
+
+    padding: 14px;
+    border: 2px solid $btn-border;
+    border-radius: 24px;
+
+    background-color: $bg-button;
+    text-align: center;
+    text-transform: uppercase;
+
+    &__indicator {
+        margin-left: 8px;
+    }
+
+    svg {
+        width: 16px;
+        height: 16px;
+    }
+
+    &__list {
+        @include flex-col(10px, center, center);
+
+        width: 75px;
+        padding-block: 10px;
+
+        border-radius: 20px;
+        border: 2px solid $btn-border;
+
+        background-color: $bg-button;
+        text-align: center;
+        text-transform: uppercase;
+    }
+
+    &__item {
+        @include transition(color);
+        @include hover() {
+            color: #7ddacf;
+        }
+
+        color: $font-color;
+
+        &:has(input:checked) {
+            color: $border-color;
+        }
+    }
+
+    @include media-max-md() {
+        padding: 8px;
+        justify-content: center;
+
+        &__indicator {
+            display: none;
+        }
+
+        svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        &__list {
+            width: 40px;
+        }
+    }
+}

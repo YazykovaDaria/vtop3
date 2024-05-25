@@ -2,24 +2,57 @@
     max-width: $max-width;
     width: 100%;
     margin: 0 auto;
-    padding: 0 40px;
+    padding-left: 140px;
+    padding-right: 140px;
 
-    @include media-max-md() {
-        padding: 0 30px;
+    @include media-max-xl() {
+        padding-left: 40px;
+        padding-right: 40px;
     }
 
-    @include media-max-s() {
-        padding: 0 10px;
+    @include media-max-lg() {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    @include media-max-md() {
+        padding-left: 10px;
+        padding-right: 10px;
     }
 }
 
-.section {
-    padding-top: 80px;
-    padding-bottom: 100px;
+.link {
+    @include transition(color, 0.3s, linear);
+    position: relative;
 
-    @include media-max-s() {
-        padding-top: 42px;
-        padding-bottom: 42px;
+    color: $font-color;
+
+    &::after {
+        @include transition(width, 0.3s, linear);
+
+        content: " ";
+        background: $border-color;
+        width: 0;
+        height: 1px;
+        position: absolute;
+        bottom: -2px;
+        left: 0px;
+    }
+
+    @include hover() {
+        color: $border-color;
+
+        &::after {
+            width: 100%;
+        }
+    }
+
+    &--active {
+        color: $border-color;
+
+        &::after {
+            width: 100%;
+        }
     }
 }
 
