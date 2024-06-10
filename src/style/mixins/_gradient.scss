@@ -1,7 +1,7 @@
 @mixin bg-gradient() {
-    background: radial-gradient(
-        100% 215.42% at 0% 0%,
-        #5b483a 0%,
-        #262425 100%
+    background: linear-gradient(
+        180deg,
+        #fff 63.64%,
+        rgba(255, 255, 255, 0) 95.45%
     );
 }

@@ -1,8 +1,7 @@
 html {
-    // @include custom-scroll-y();
+    @include custom-scroll-y();
 
     scroll-behavior: smooth;
-    scrollbar-gutter: stable;
 }
 
 html,
@@ -10,7 +9,7 @@ body {
     height: 100%;
 }
 
-.body-wrapper {
+.body {
     @include flex-col();
     @include font(16px, 125%, 400);
     position: relative;
@@ -23,8 +22,76 @@ body {
     font-style: normal;
     color: $font-color;
     background-color: $bg-main;
+
+    &--gradient {
+        .body__gradient-top {
+            display: block;
+        }
+    }
+
+    &__gradient-top {
+        @include size(226px, 1302px);
+
+        display: none;
+
+        position: absolute;
+        bottom: 0;
+        left: 160px;
+
+        background: linear-gradient(
+            180deg,
+            #478bf9 0%,
+            rgba(71, 139, 249, 0.4) 100%
+        );
+        filter: blur(200px);
+        border-radius: 50%;
+
+        transform: rotate(-60deg);
+    }
+
+    &__gradient-bottom {
+        @include size(574px, 574px);
+
+        display: none;
+
+        position: absolute;
+        bottom: 20px;
+        right: -150px;
+
+        border-radius: 100%;
+        background: linear-gradient(225deg, #478bf9 0%, #9dadf2 100%);
+        filter: blur(272px);
+    }
+
+    @include media-max-custom(1830px) {
+        &__gradient-top {
+            @include size(100px, 900px);
+            bottom: auto;
+            top: -200px;
+            left: 40px;
+            filter: blur(60px);
+        }
+    }
+
+    @include media-max-lg() {
+        &__gradient-top {
+            @include size(81px, 466px);
+            top: 0;
+            left: 40px;
+        }
+
+        &__gradient-bottom {
+            @include size(240px, 240px);
+
+            bottom: 240px;
+            right: -60px;
+            filter: blur(150px);
+        }
+    }
 }
 
 .main {
     flex-grow: 1;
+    position: relative;
+    z-index: 1;
 }

@@ -1,0 +1,212 @@
+.hero {
+    &__inner {
+        @include flex-row(null, center, space-between);
+
+        max-height: 1026px;
+        overflow: hidden;
+    }
+
+    &__content {
+        position: relative;
+        z-index: 2;
+    }
+    &__titles {
+        @include flex-col();
+    }
+
+    &__title {
+        color: $border-color;
+    }
+
+    &__slogan {
+        @include font(32px, 100%, 500);
+
+        margin-top: 24px;
+        margin-bottom: 48px;
+
+        color: rgba(255, 255, 255, 0.6);
+    }
+
+    &__btn {
+        @include font(24px, 133%, 600);
+
+        height: 72px;
+        max-width: 393px;
+    }
+
+    &__banner {
+        @include flex-row(16px);
+
+        // mask-image: linear-gradient(black, transparent);
+    }
+
+    @include media-max-custom(1830px) {
+        &__inner {
+            display: grid;
+            justify-content: space-between;
+            align-items: start;
+            grid-template-rows: 550px 1fr;
+            grid-template-areas:
+                "content banner"
+                "blog banner";
+
+            max-height: 1260px;
+        }
+
+        &__blog {
+            grid-area: blog;
+        }
+
+        &__banner {
+            grid-area: banner;
+        }
+
+        &__content {
+            grid-area: content;
+
+            margin-top: 70px;
+        }
+    }
+
+    @include media-max-custom(1040px) {
+        &__inner {
+            justify-content: center;
+            align-items: center;
+            grid-template-rows: auto;
+            grid-template-areas:
+                "content"
+                "banner"
+                "blog";
+
+            row-gap: 32px;
+            max-height: none;
+            padding: 0;
+        }
+
+        &__banner {
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        &__content {
+            @include flex-col(null, center, center);
+
+            text-align: center;
+        }
+
+        &__blog {
+            margin-bottom: 119px;
+        }
+
+        &__btn {
+            font-size: 18px;
+
+            width: 300px;
+            height: 53px;
+        }
+
+        &__gradient {
+            @include size(81px, 466px);
+            top: -80px;
+            left: 40px;
+            filter: blur(60px);
+        }
+    }
+
+    @include media-max-sm() {
+        &__slogan {
+            margin-top: 12px;
+            margin-bottom: 24px;
+            max-width: 300px;
+
+            font-size: 20px;
+            line-height: 130%;
+            text-align: center;
+        }
+    }
+}
+
+.blog {
+    @include flex-col(24px, center, center);
+
+    &__container {
+        @include size(531px, 595px);
+        @include flex-row();
+
+        border: 3px solid $border-color;
+        border-radius: 100px;
+
+        padding-block: 24px;
+
+        background: rgba(255, 255, 255, 0.12);
+    }
+
+    &__posts {
+        @include flex-col(20px, center, center);
+    }
+
+    .simplebar-content {
+        margin-right: 16px;
+    }
+
+    .simplebar-mask {
+        border-radius: 100px;
+    }
+
+    .simplebar-scrollbar {
+        background: $border-color;
+        border-radius: 10px;
+        width: 8px;
+
+        &:before {
+            background: $border-color;
+        }
+    }
+
+    .simplebar-track.simplebar-vertical {
+        top: 50%;
+        transform: translateY(-50%);
+
+        width: 8px;
+        height: 403px;
+        margin-right: 16px;
+
+        background: rgba(255, 255, 255, 0.12);
+        border-radius: 4px;
+    }
+
+    @include media-max-s() {
+        gap: 18px;
+
+        &__container {
+            @include size(300px, 421px);
+
+            border-radius: 50px;
+            border-width: 2px;
+            padding-block: 0;
+        }
+
+        &__posts {
+            gap: 10px;
+            padding-block: 10px;
+        }
+
+        .simplebar-content {
+            margin-right: 6px;
+        }
+
+        .simplebar-mask {
+            border-radius: 50px;
+        }
+
+        .simplebar-scrollbar {
+            width: 4px;
+        }
+
+        .simplebar-track.simplebar-vertical {
+            width: 4px;
+            height: 301px;
+            margin-right: 6px;
+        }
+    }
+}

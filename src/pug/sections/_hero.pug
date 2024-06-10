@@ -1,0 +1,168 @@
+section.hero
+
+  //- .hero__gradient
+
+
+  .container.hero__inner
+
+    .hero__content
+      h1.hero__titles
+        span.title HOUSE OF
+        span.title.hero__title GAMBLING
+      p.hero__slogan Raise your ROI with direct advertiser
+      a.btn-main.hero__btn(href="#") Become a Partner
+
+    .hero__banner
+      .marquee.marquee--reverse
+        .marquee__content
+            .marquee__desctop
+              include @icons/chips/baks-xl.svg
+            .marquee__tablet
+              include @icons/chips/baks-t.svg
+            include @icons/chips/soccer.svg
+            include @icons/chips/log.svg
+            include @icons/chips/shield.svg
+            .marquee__desctop
+              include @icons/chips/baks-xl.svg
+            .marquee__tablet
+              include @icons/chips/baks-t.svg
+            include @icons/chips/soccer.svg
+            include @icons/chips/log.svg
+            include @icons/chips/shield.svg
+
+        .marquee__content(aria-hidden="true")
+            .marquee__desctop
+              include @icons/chips/baks-xl.svg
+            .marquee__tablet
+              include @icons/chips/baks-t.svg
+            include @icons/chips/soccer.svg
+            include @icons/chips/log.svg
+            include @icons/chips/shield.svg
+            .marquee__desctop
+              include @icons/chips/baks-xl.svg
+            .marquee__tablet
+              include @icons/chips/baks-t.svg
+            include @icons/chips/soccer.svg
+            include @icons/chips/log.svg
+            include @icons/chips/shield.svg
+
+        .marquee__content(aria-hidden="true")
+            .marquee__desctop
+              include @icons/chips/baks-xl.svg
+            .marquee__tablet
+              include @icons/chips/baks-t.svg
+            include @icons/chips/soccer.svg
+            include @icons/chips/log.svg
+            include @icons/chips/shield.svg
+            .marquee__desctop
+              include @icons/chips/baks-xl.svg
+            .marquee__tablet
+              include @icons/chips/baks-t.svg
+            include @icons/chips/soccer.svg
+            include @icons/chips/log.svg
+            include @icons/chips/shield.svg
+
+      .marquee
+        .marquee__content
+          .marquee__desctop
+            include @icons/chips/world-xl.svg
+          .marquee__tablet
+            include @icons/chips/world-t.svg
+          include @icons/chips/log-2.svg
+          include @icons/chips/timer.svg
+          include @icons/chips/crown.svg
+          .marquee__desctop
+            include @icons/chips/world-xl.svg
+          .marquee__tablet
+            include @icons/chips/world-t.svg
+          include @icons/chips/log-2.svg
+          include @icons/chips/timer.svg
+          include @icons/chips/crown.svg
+
+        .marquee__content(aria-hidden='true')
+          .marquee__desctop
+            include @icons/chips/world-xl.svg
+          .marquee__tablet
+            include @icons/chips/world-t.svg
+          include @icons/chips/log-2.svg
+          include @icons/chips/timer.svg
+          include @icons/chips/crown.svg
+          .marquee__desctop
+            include @icons/chips/world-xl.svg
+          .marquee__tablet
+            include @icons/chips/world-t.svg
+          include @icons/chips/log-2.svg
+          include @icons/chips/timer.svg
+          include @icons/chips/crown.svg
+
+        .marquee__content(aria-hidden='true')
+          .marquee__desctop
+            include @icons/chips/world-xl.svg
+          .marquee__tablet
+            include @icons/chips/world-t.svg
+          include @icons/chips/log-2.svg
+          include @icons/chips/timer.svg
+          include @icons/chips/crown.svg
+          .marquee__desctop
+            include @icons/chips/world-xl.svg
+          .marquee__tablet
+            include @icons/chips/world-t.svg
+          include @icons/chips/log-2.svg
+          include @icons/chips/timer.svg
+          include @icons/chips/crown.svg
+
+      .marquee.marquee--reverse
+        .marquee__content
+          .marquee__desctop
+            include @icons/chips/crown-xl.svg
+          .marquee__tablet
+            include @icons/chips/crown-t.svg
+          include @icons/chips/shield.svg
+          include @icons/chips/log-3.svg
+          include @icons/chips/soccer.svg
+          .marquee__desctop
+            include @icons/chips/crown-xl.svg
+          .marquee__tablet
+            include @icons/chips/crown-t.svg
+          include @icons/chips/shield.svg
+          include @icons/chips/log-3.svg
+          include @icons/chips/soccer.svg
+
+        .marquee__content(aria-hidden='true')
+          .marquee__desctop
+            include @icons/chips/crown-xl.svg
+          .marquee__tablet
+            include @icons/chips/crown-t.svg
+          include @icons/chips/shield.svg
+          include @icons/chips/log-3.svg
+          include @icons/chips/soccer.svg
+          .marquee__desctop
+            include @icons/chips/crown-xl.svg
+          .marquee__tablet
+            include @icons/chips/crown-t.svg
+          include @icons/chips/shield.svg
+          include @icons/chips/log-3.svg
+          include @icons/chips/soccer.svg
+
+        .marquee__content(aria-hidden='true')
+          .marquee__desctop
+            include @icons/chips/crown-xl.svg
+          .marquee__tablet
+            include @icons/chips/crown-t.svg
+          include @icons/chips/shield.svg
+          include @icons/chips/log-3.svg
+          include @icons/chips/soccer.svg
+          .marquee__desctop
+            include @icons/chips/crown-xl.svg
+          .marquee__tablet
+            include @icons/chips/crown-t.svg
+          include @icons/chips/shield.svg
+          include @icons/chips/log-3.svg
+          include @icons/chips/soccer.svg
+
+    section.blog.hero__blog
+      h2.subtitle blog
+      .blog__container.js-scrollbar
+        .blog__posts
+          -for (var x = 0; x < 5; x++)
+            +post()

@@ -57,44 +57,23 @@
 }
 
 .title {
-    // @include font(35px, 130%, 400);
+    @include font(96px, 100%, 500);
 
-    // color: $color-font-main;
-    // font-family: Georgia, serif;
-    // font-style: normal;
-    // letter-spacing: 0.06em;
-
-    // @include media-max-s() {
-    //     font-size: 25px;
-    //     text-align: center;
-    // }
-
-    // &--center {
-    //     text-align: center;
-    // }
-}
-
-.text {
-    // font-family: Arial, sans-serif;
-    // font-size: 15px;
-    // line-height: 160%;
-    // color: $color-font-text;
-
-    // @media (max-width: 640px) {
-    //     text-align: center;
-    // }
+    @include media-max-s() {
+        font-size: 46px;
+        line-height: 109%;
+    }
 }
 
 .subtitle {
-    // font-family: "Georgia", serif;
-    // font-size: 20px;
-    // line-height: 115%;
-    // letter-spacing: 0.06em;
-    // color: $font-card;
+    @include font(40px, 100%, 600);
 
-    // @media (max-width: 640px) {
-    //     text-align: center;
-    // }
+    text-transform: uppercase;
+
+    @include media-max-s() {
+        font-size: 32px;
+        line-height: 125%;
+    }
 }
 
 .sr-only {

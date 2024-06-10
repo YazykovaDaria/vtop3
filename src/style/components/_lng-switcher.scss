@@ -2,6 +2,7 @@
     @include flex-row(null, center);
 
     padding: 14px;
+
     border: 2px solid $btn-border;
     border-radius: 24px;
 
@@ -33,15 +34,18 @@
     }
 
     &__item {
-        @include transition(color);
+        @include transition(opacity);
+        opacity: 0.7;
+
         @include hover() {
-            color: #7ddacf;
+            opacity: 1;
         }
 
         color: $font-color;
 
         &:has(input:checked) {
             color: $border-color;
+            opacity: 1;
         }
     }
 

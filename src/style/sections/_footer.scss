@@ -22,11 +22,11 @@
         }
     }
 
-    &__link {
-    }
-
     &__social {
         @include flex-col(14px);
+
+        position: relative;
+        z-index: 1;
 
         text-align: right;
     }
