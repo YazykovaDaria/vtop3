@@ -24,7 +24,8 @@ body {
     background-color: $bg-main;
 
     &--gradient {
-        .body__gradient-top {
+        .body__gradient-top,
+        .body__gradient-bottom {
             display: block;
         }
     }

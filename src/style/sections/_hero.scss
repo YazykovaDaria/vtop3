@@ -36,8 +36,7 @@
 
     &__banner {
         @include flex-row(16px);
-
-        // mask-image: linear-gradient(black, transparent);
+        position: relative;
     }
 
     @include media-max-custom(1830px) {
