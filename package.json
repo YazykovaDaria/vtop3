@@ -7,7 +7,7 @@
     "dev": "webpack serve",
     "build-dev": "webpack",
     "build-prod": "webpack --node-env=production",
-    "public": "npx webpack --node-env=production && npx gh-pages -d dist -e shelter",
+    "public": "npx webpack --node-env=production && npx gh-pages -d dist -e vtop3",
     "lint": "npx eslint .",
     "stylelint": "stylelint '**/*{.css,.scss}'",
     "stylelint-fix": "stylelint '**/*{.css,.scss}' --fix",
