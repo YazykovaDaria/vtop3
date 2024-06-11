@@ -8,7 +8,7 @@
       <stop stop-color="#478BF9"/>
       <stop offset="1" stop-color="#9DADF2"/>
     </linearGradient>
-    <clipPath id="a">
+    <clipPath  >
       <path fill="#fff" d="M0 0h32v32H0z"/>
     </clipPath>
   </defs>

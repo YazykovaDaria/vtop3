@@ -10,7 +10,7 @@
     </g>
   </g>
   <defs>
-    <clipPath id="a" class="a">
+    <clipPath   class="a">
       <path fill="#fff" d="M0 0h32v32H0z"/>
     </clipPath>
   </defs>
