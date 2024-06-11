@@ -1,0 +1,59 @@
+.burger {
+    @include size(28px, 28px);
+
+    position: relative;
+
+    span {
+        @include size(22px, 2px);
+        @include transition(transform);
+
+        display: block;
+
+        position: absolute;
+        right: 3px;
+        top: 50%;
+
+        background-color: $font-color;
+        border-radius: 5px;
+
+        &:nth-child(1) {
+            transform: translateY(6px);
+        }
+        &:nth-child(2) {
+            @include transition(width, 0.3s, linear);
+        }
+        &:nth-child(3) {
+            transform: translateY(-6px);
+        }
+    }
+
+    &--active {
+        @include transition(opacity);
+
+        span {
+            &:nth-child(1) {
+                transform: translateY(0) rotate(45deg);
+            }
+            &:nth-child(2) {
+                opacity: 0;
+            }
+            &:nth-child(3) {
+                transform: translateY(0) rotate(-45deg);
+            }
+        }
+
+        @include hover() {
+            opacity: 0.6;
+        }
+    }
+
+    @include hover {
+        cursor: pointer;
+
+        span {
+            &:nth-child(2) {
+                width: 50%;
+            }
+        }
+    }
+}

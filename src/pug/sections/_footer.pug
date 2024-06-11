@@ -1,0 +1,35 @@
+footer.footer
+  .container.footer__inner
+    nav.footer__nav
+      ul.footer__links.footer__links--col
+        each item in footerNav
+          li
+            a(class=`link footer__link link--${item.cls}` href=item.href)=item.label
+
+      .footer__social
+        span.footer__link Our social media:
+        ul.footer__links.footer__links--social
+          li
+            a.footer__icon(href="#")
+              include @icons/twi.svg
+          li
+            a.footer__icon(href="#")
+              include @icons/fb.svg
+          li
+            a.footer__icon(href="#")
+              include @icons/inst.svg
+          li
+            a.footer__icon(href="#")
+              include @icons/link.svg
+          li
+            a.footer__icon(href="#")
+              include @icons/you.svg
+          li
+            a.footer__icon(href="#")
+              include @icons/tik.svg
+          li
+            a.footer__icon(href="#")
+              include @icons/telega.svg
+          li
+            a.footer__icon(href="#")
+              include @icons/vk.svg

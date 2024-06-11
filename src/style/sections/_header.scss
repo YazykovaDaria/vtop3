@@ -1,0 +1,121 @@
+$header-bg: #110a1d;
+
+.header {
+    &__inner {
+        padding: 24px 48px;
+        margin-top: 16px;
+
+        border: 4px solid $border-color;
+        border-radius: 64px;
+    }
+
+    &__nav {
+        @include flex-row(191px, center, flex-end);
+
+        &--tablet {
+            @include flex-col(30px);
+
+            padding: 30px 10px 92px 10px;
+            background-color: $bg-main;
+            cursor: auto;
+        }
+    }
+
+    &__list {
+        @include flex-row(32px);
+
+        &--tablet {
+            @include flex-col(5px);
+        }
+    }
+
+    &__item {
+        border: 2px solid $border-color;
+
+        border-radius: 28px;
+        padding: 13px 20px;
+        width: 300px;
+    }
+
+    &__btns {
+        @include flex-row(14px);
+    }
+
+    &__btn {
+        background-color: #1e1231;
+    }
+
+    &__nav-bg {
+        @include flex-row(null, null, flex-end);
+        @include transition(all, 0.4s, linear);
+
+        position: absolute;
+        top: 80px;
+        left: 100%;
+        width: 100%;
+        height: 100vh;
+        visibility: hidden;
+        background: rgba(7, 16, 49, 0.6);
+        cursor: pointer;
+        z-index: 5;
+    }
+
+    &--active {
+        .header__nav-bg {
+            left: 0;
+            visibility: visible;
+        }
+    }
+
+    &__tablet {
+        display: none;
+    }
+
+    @include media-max-xl() {
+        &__nav {
+            justify-content: space-between;
+            gap: 20px;
+        }
+    }
+
+    @include media-max-lg() {
+        &__inner {
+            padding: 10px 14px;
+        }
+    }
+
+    @include media-max-md() {
+        &__inner {
+            border-width: 2px;
+        }
+
+        &__nav {
+            justify-content: flex-end;
+            gap: 8px;
+        }
+
+        &__link {
+            font-size: 18px;
+            line-height: 133%;
+        }
+
+        &__desctop {
+            display: none;
+        }
+
+        &__tablet {
+            display: block;
+        }
+    }
+
+    @include media-max-s() {
+        .header__nav--tablet {
+            width: 100%;
+            align-items: center;
+        }
+
+        .header__btn--tablet {
+            width: 300px;
+        }
+    }
+}

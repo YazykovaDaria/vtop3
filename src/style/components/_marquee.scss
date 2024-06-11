@@ -1,0 +1,90 @@
+$gap: 22px;
+
+.marquee {
+    @include flex-col($gap);
+    position: relative;
+
+    overflow: hidden;
+    user-select: none;
+
+    &:nth-child(odd) {
+        mask-image: linear-gradient(black, transparent);
+        opacity: 0.7;
+    }
+
+    &--reverse .marquee__content {
+        animation-direction: reverse;
+    }
+
+    &__content {
+        @include flex-col($gap, null, space-around);
+
+        flex-shrink: 0;
+
+        min-width: 100%;
+        animation: scrollY 10s linear infinite;
+
+        // animation-play-state: paused !important;
+    }
+
+    &__tablet {
+        display: none;
+    }
+
+    @include media-max-custom(1040px) {
+        flex-direction: row;
+
+        &__desctop {
+            display: none;
+        }
+
+        &__tablet {
+            display: block;
+
+            svg {
+                @include size(222px, 100px);
+            }
+        }
+
+        &__content {
+            flex-direction: row;
+            animation-name: scrollX;
+            min-width: auto;
+        }
+    }
+
+    @include media-max-s() {
+        svg {
+            @include size(50px, 50px);
+        }
+
+        &__tablet > svg {
+            width: 110px;
+        }
+    }
+}
+
+@keyframes scrollX {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(calc(-100% - $gap));
+    }
+}
+
+@keyframes scrollY {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(calc(-100% - $gap));
+    }
+}
+
+/* Pause animation when reduced-motion is set */
+@media (prefers-reduced-motion: reduce) {
+    .marquee__content {
+        animation-play-state: paused !important;
+    }
+}

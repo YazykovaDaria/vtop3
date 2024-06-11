@@ -1,0 +1,91 @@
+.footer {
+    &__inner {
+        border-left: 4px solid $border-color;
+        border-right: 4px solid $border-color;
+        border-top: 4px solid $border-color;
+        border-radius: 64px 64px 0 0;
+
+        padding-top: 40px;
+        padding-bottom: 24px;
+        background: #1e1231;
+    }
+
+    &__nav {
+        @include flex-row(null, flex-end, space-between);
+    }
+
+    &__links {
+        @include flex-row(40px, center);
+
+        &--social {
+            gap: 8px;
+        }
+    }
+
+    &__social {
+        @include flex-col(14px);
+
+        position: relative;
+        z-index: 1;
+
+        text-align: right;
+    }
+
+    &__icon {
+        display: block;
+        max-height: 32px;
+
+        @include hover() {
+            svg {
+                stroke: $font-color;
+            }
+        }
+
+        svg {
+            @include transition(stroke);
+
+            width: 32px;
+            height: 32px;
+        }
+    }
+
+    @include media-max-lg() {
+        &__nav {
+            flex-direction: column;
+            gap: 20px;
+            align-items: flex-start;
+        }
+
+        &__social {
+            text-align: start;
+            gap: 8px;
+        }
+    }
+
+    @include media-max-md() {
+        &__inner {
+            padding: 20px;
+            border-radius: 50px 50px 0 0;
+        }
+
+        &__link {
+            font-size: 14px;
+            line-height: 143%;
+        }
+
+        &__icon {
+            svg {
+                width: 27px;
+                height: 27px;
+            }
+        }
+    }
+
+    @include media-max-custom(640px) {
+        &__links--col {
+            flex-direction: column;
+            gap: 2px;
+            align-items: flex-start;
+        }
+    }
+}

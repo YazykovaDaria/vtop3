@@ -1,0 +1,90 @@
+.container {
+    max-width: $max-width;
+    width: 100%;
+    margin: 0 auto;
+    padding-left: 140px;
+    padding-right: 140px;
+
+    @include media-max-xl() {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+
+    @include media-max-lg() {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    @include media-max-md() {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}
+
+.link {
+    @include transition(color, 0.3s, linear);
+    position: relative;
+
+    color: $font-color;
+
+    &::after {
+        @include transition(width, 0.3s, linear);
+
+        content: " ";
+        background: $border-color;
+        width: 0;
+        height: 1px;
+        position: absolute;
+        bottom: -2px;
+        left: 0px;
+    }
+
+    @include hover() {
+        color: $border-color;
+
+        &::after {
+            width: 100%;
+        }
+    }
+
+    &--active {
+        color: $border-color;
+
+        &::after {
+            width: 100%;
+        }
+    }
+}
+
+.title {
+    @include font(96px, 100%, 500);
+
+    @include media-max-s() {
+        font-size: 46px;
+        line-height: 109%;
+    }
+}
+
+.subtitle {
+    @include font(40px, 100%, 600);
+
+    text-transform: uppercase;
+
+    @include media-max-s() {
+        font-size: 32px;
+        line-height: 125%;
+    }
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}

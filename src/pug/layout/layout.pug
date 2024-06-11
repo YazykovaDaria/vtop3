@@ -1,0 +1,30 @@
+include ../mixins/mixins
+
+block variables
+
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(http-equiv='X-UA-Compatible' content='IE=edge')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    title=title
+    link(href="@styles/index.scss" rel="stylesheet")
+    style.
+      @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,500;1,500&display=swap');
+
+
+  body
+    .body(class=bodyClas)
+      include ../sections/_header
+
+      main.main
+        block content
+
+      include ../sections/_footer
+
+      .body__gradient-top
+      .body__gradient-bottom
+
+    script(src="@scripts/index.js" defer="defer")

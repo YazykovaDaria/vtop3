@@ -1,0 +1,56 @@
+$post-bg: #1e1231;
+
+.post {
+    @include size(467px, 146px);
+    @include flex-col(14px);
+    @include transition(background-color);
+
+    border-radius: 196px;
+    padding: 16px 64px;
+
+    background-color: $post-bg;
+
+    &:first-child {
+        background-color: $border-color;
+    }
+
+    @include hover() {
+        background-color: $border-color;
+    }
+
+    &__text {
+        @include font(24px, 117%, 400);
+
+        color: $font-color;
+        display: block;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    &__date {
+        @include font(14px, 114%, 500);
+
+        margin-top: auto;
+
+        font-family: "Jost", sans-serif;
+        font-optical-sizing: auto;
+        font-style: normal;
+        color: rgba(255, 255, 255, 0.6);
+    }
+
+    @include media-max-s() {
+        @include size(274px, 112px);
+
+        gap: 6px;
+        border-radius: 40px;
+        padding: 15px 35px;
+
+        &__text {
+            font-size: 16px;
+            line-height: 125%;
+        }
+    }
+}

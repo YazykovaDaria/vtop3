@@ -1,0 +1,27 @@
+.dropdown {
+    position: relative;
+    display: inline-block;
+
+    padding: 0 20px, 20px 20px;
+
+    @include hover() {
+        cursor: pointer;
+
+        & .dropdown__content {
+            visibility: visible;
+            opacity: 1;
+            transform: rotateX(0deg);
+        }
+    }
+
+    &__content {
+        position: absolute;
+
+        transform-origin: 0 0;
+        transform: rotateX(-90deg);
+        transition: transform 0.3s linear;
+        visibility: hidden;
+        opacity: 0;
+        z-index: 10;
+    }
+}

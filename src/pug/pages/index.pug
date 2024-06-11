@@ -1,0 +1,12 @@
+extends ../layout/layout
+
+block variables
+  -const title = 'Main'
+  -const bodyClas = 'body--gradient'
+
+  -const nav = [{ href: '#', label: 'About us'}, { href: '#', label: 'Brands' }, { href: '#', label: 'Commissions' },{ href: '#', label: 'News'}, { href: '#', label: 'Contact us'}, { href: '#', label: 'Careers'}]
+
+  -const footerNav = [{ href: '#', label: 'Terms & Conditions', cls: 'active'}, { href: '#', label: 'Cookies' }, { href: '#', label: 'Contacts' },{ href: '#', label: 'Careers'}, { href: '#', label: 'Brand Guide'}]
+
+block content
+  include ../sections/_hero
