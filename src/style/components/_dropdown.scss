@@ -4,13 +4,23 @@
 
     padding: 0 20px, 20px 20px;
 
-    @include hover() {
-        cursor: pointer;
-
+    &--touch {
         & .dropdown__content {
             visibility: visible;
             opacity: 1;
             transform: rotateX(0deg);
+        }
+    }
+
+    &--mouse {
+        &:hover {
+            cursor: pointer;
+
+            & .dropdown__content {
+                visibility: visible;
+                opacity: 1;
+                transform: rotateX(0deg);
+            }
         }
     }
 

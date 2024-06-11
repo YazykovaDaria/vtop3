@@ -1,3 +1,3 @@
 stack: js, scss, pug, webpack, eslint, stylelint
 
-demo: https://shelter-site-rss.netlify.app/
+demo: https://yazykovadaria.github.io/vtop3/vtop3/
